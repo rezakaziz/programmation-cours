@@ -14,7 +14,7 @@ layout: default
 <div><b>Introduction à la POO et au cours</b></div>
 
 <div class="text-xl font-bold text-gray-300">02</div>
-<div><b>Classes, objets et tableaux</b></div>
+<div><b>Classes et objets</b></div>
 
 <div class="text-xl font-bold text-gray-300">03</div>
 <div><b>Encapsulation et packages</b></div>

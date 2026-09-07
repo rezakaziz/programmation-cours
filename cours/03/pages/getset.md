@@ -2,6 +2,74 @@
 layout: default
 ---
 
+# L'encapsulation
+
+<div class="mt-3 text-lg">
+
+Les modificateurs d'accès permettent de mettre en œuvre un principe important de la programmation orientée objet : <strong>l'encapsulation</strong>.
+
+</div>
+
+<div class="grid grid-cols-2 gap-8 mt-8">
+
+<div class="border border-gray-200 rounded-lg p-5 text-center">
+
+<div class="text-xl font-medium">
+🔒 Cacher les données
+</div>
+
+<div class="mt-4">
+
+Les attributs sont généralement déclarés <code>private</code>.
+
+</div>
+
+<div class="mt-4 text-gray-500">
+
+On évite ainsi qu'ils soient modifiés directement depuis l'extérieur de la classe.
+
+</div>
+
+</div>
+
+<div class="border border-gray-200 rounded-lg p-5 text-center">
+
+<div class="text-xl font-medium">
+🚪 Contrôler l'accès
+</div>
+
+<div class="mt-4">
+
+Des méthodes <code>public</code> permettent d'interagir avec l'objet.
+
+</div>
+
+<div class="mt-4 text-gray-500">
+
+La classe contrôle ainsi la manière dont ses données sont utilisées ou modifiées.
+
+</div>
+
+</div>
+
+</div>
+
+<div class="mt-7 text-center text-lg">
+
+<strong>L'encapsulation</strong> consiste à <strong>cacher l'état interne</strong> d'un objet
+et à <strong>contrôler l'accès</strong> à cet état.
+
+</div>
+
+<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+
+💡 L'objet ne laisse pas les autres classes manipuler librement ses données internes.
+
+</div>
+---
+layout: default
+---
+
 # Accéder aux attributs privés
 
 <div class="mt-3 text-lg">

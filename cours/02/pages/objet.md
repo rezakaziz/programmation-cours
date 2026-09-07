@@ -15,8 +15,8 @@ Nous avons défini une classe <code>Point</code> avec deux attributs :
 ```mermaid {theme: 'neutral', scale: 0.72}
 classDiagram
     class Point {
-        - x : int
-        - y : int
+        x : int
+        y : int
     }
 ```
 
@@ -37,7 +37,7 @@ La classe <code>Point</code>
 </div>
 
 <div class="text-sm text-gray-500 mt-2">
-décrit ce que possède un point
+décrit les informations communes
 </div>
 
 <div class="mt-3">
@@ -66,8 +66,9 @@ possède des valeurs précises
 
 <div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
 
-La <strong>classe</strong> décrit le modèle.  
-Un <strong>objet</strong> représente un élément particulier construit à partir de ce modèle.
+La <strong>classe</strong> décrit le modèle.
+
+Un <strong>objet</strong> représente un élément particulier créé à partir de ce modèle.
 
 </div>
 
@@ -121,7 +122,8 @@ x = 8 · y = 1
 
 <div class="mt-6 text-center text-lg">
 
-Ces deux points suivent le même modèle <code>Point</code>,  
+Ces deux points suivent le même modèle <code>Point</code>,
+
 mais possèdent leurs <strong>propres valeurs</strong>.
 
 </div>
@@ -133,7 +135,9 @@ Chaque point est un <strong>objet</strong> de la classe <code>Point</code>.
 <br>
 
 <span class="text-gray-500">
+
 On dit aussi : une <strong>instance</strong> de la classe <code>Point</code>.
+
 </span>
 
 </div>
@@ -161,8 +165,8 @@ MODÈLE
 ```mermaid {theme: 'neutral', scale: 0.68}
 classDiagram
     class Point {
-        - x : int
-        - y : int
+        x : int
+        y : int
     }
 ```
 
@@ -231,9 +235,13 @@ Point C
 <div class="border-t border-gray-200 mt-7 pt-4 text-center font-medium">
 
 Même <strong>classe</strong>
+
 <span class="text-gray-300 mx-3">→</span>
+
 mêmes <strong>attributs</strong>
+
 <span class="text-gray-300 mx-3">→</span>
+
 valeurs différentes pour chaque <strong>objet</strong>
 
 </div>
@@ -267,7 +275,9 @@ OBJET A
 <div class="mt-3 text-xl">
 
 <code>x = 2</code>
+
 <span class="text-gray-300 mx-3">•</span>
+
 <code>y = 5</code>
 
 </div>
@@ -287,7 +297,9 @@ OBJET B
 <div class="mt-3 text-xl">
 
 <code>x = 8</code>
+
 <span class="text-gray-300 mx-3">•</span>
+
 <code>y = 1</code>
 
 </div>
@@ -360,14 +372,15 @@ APRÈS
 
 <div class="mt-7 text-center text-lg">
 
-L'objet est toujours <strong>le même point</strong>,  
+L'objet reste <strong>le même</strong>,
+
 mais son <strong>état a changé</strong>.
 
 </div>
 
 <div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
 
-Les méthodes permettent notamment de faire évoluer l'état d'un objet.
+Les méthodes permettent notamment de consulter ou de faire évoluer l'état d'un objet.
 
 </div>
 
@@ -414,7 +427,9 @@ OBJET B
 <div class="mt-7 text-center text-xl font-medium">
 
 Même état
+
 <span class="text-gray-300 mx-4">≠</span>
+
 même objet
 
 </div>
@@ -614,7 +629,7 @@ Le type
 </div>
 
 <div class="text-sm mt-2">
-La classe de l'objet
+Indique qu'il s'agit d'un objet de type <code>Point</code>.
 </div>
 
 </div>
@@ -630,7 +645,7 @@ La variable
 </div>
 
 <div class="text-sm mt-2">
-Permet d'accéder à l'objet
+Permet d'accéder à l'objet.
 </div>
 
 </div>
@@ -646,7 +661,7 @@ La création
 </div>
 
 <div class="text-sm mt-2">
-Crée un nouvel objet
+Crée un nouvel objet.
 </div>
 
 </div>
@@ -656,6 +671,104 @@ Crée un nouvel objet
 <div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
 
 À chaque exécution de <code>new Point()</code>, un <strong>nouvel objet</strong> est créé.
+
+</div>
+
+---
+layout: default
+---
+
+# Utiliser un objet
+
+<div class="mt-3 text-lg">
+
+Une fois l'objet créé, nous pouvons utiliser ses attributs et ses méthodes.
+
+</div>
+
+```java
+Point p = new Point();
+
+p.x = 3;
+p.y = 5;
+
+p.afficher();
+```
+
+<div class="mt-5 text-center text-gray-500">
+
+Le point désigné par <code>p</code> possède maintenant l'état :
+
+</div>
+
+<div class="mt-4 text-center text-2xl font-medium">
+
+<code>(3, 5)</code>
+
+</div>
+
+<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+
+L'opérateur <code>.</code> permet d'accéder à un membre d'un objet.
+
+</div>
+
+---
+layout: default
+---
+
+# Appeler une méthode sur un objet
+
+<div class="mt-3 text-lg">
+
+Nous pouvons aussi demander à l'objet d'exécuter une méthode.
+
+</div>
+
+```java
+Point p = new Point();
+
+p.x = 2;
+p.y = 5;
+
+p.deplacer(3, 1);
+```
+
+<div class="flex justify-center items-center gap-8 mt-6">
+
+<div class="border border-gray-200 rounded-lg p-4 text-center">
+
+<div class="text-sm text-gray-400">
+AVANT
+</div>
+
+<div class="mt-2 text-xl">
+<code>(2, 5)</code>
+</div>
+
+</div>
+
+<div class="text-3xl text-gray-300">
+→
+</div>
+
+<div class="border border-gray-200 rounded-lg p-4 text-center">
+
+<div class="text-sm text-gray-400">
+APRÈS
+</div>
+
+<div class="mt-2 text-xl">
+<code>(5, 6)</code>
+</div>
+
+</div>
+
+</div>
+
+<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+
+L'appel <code>p.deplacer(...)</code> agit sur l'<strong>objet désigné par <code>p</code></strong>.
 
 </div>
 
@@ -675,8 +788,11 @@ Observons ce programme :
 Point p1 = new Point();
 Point p2 = new Point();
 
-p1.initialiser(3, 5);
-p2.initialiser(3, 5);
+p1.x = 3;
+p1.y = 5;
+
+p2.x = 3;
+p2.y = 5;
 ```
 
 <div class="mt-4 text-center text-xl font-medium">
@@ -716,7 +832,9 @@ Objet accessible via <code>p2</code>
 <div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
 <strong>2 appels</strong> à <code>new Point()</code>
+
 <span class="text-gray-300 mx-2">→</span>
+
 <strong>2 objets distincts</strong>
 
 </div>
@@ -737,8 +855,11 @@ Que se passe-t-il si nous déplaçons uniquement <code>p1</code> ?
 Point p1 = new Point();
 Point p2 = new Point();
 
-p1.initialiser(3, 5);
-p2.initialiser(3, 5);
+p1.x = 3;
+p1.y = 5;
+
+p2.x = 3;
+p2.y = 5;
 
 p1.deplacer(2, 1);
 ```
@@ -752,9 +873,13 @@ p1.deplacer(2, 1);
 </div>
 
 <div class="mt-3">
+
 <code>(3, 5)</code>
+
 <span class="text-gray-300 mx-2">→</span>
+
 <strong><code>(5, 6)</code></strong>
+
 </div>
 
 <div class="text-sm text-gray-500 mt-2">
@@ -770,9 +895,13 @@ son état change
 </div>
 
 <div class="mt-3">
+
 <code>(3, 5)</code>
+
 <span class="text-gray-300 mx-2">→</span>
+
 <strong><code>(3, 5)</code></strong>
+
 </div>
 
 <div class="text-sm text-gray-500 mt-2">
@@ -785,7 +914,7 @@ son état ne change pas
 
 <div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
-Appeler une méthode sur <code>p1</code> agit sur <strong>l'objet désigné par <code>p1</code></strong>, pas sur <code>p2</code>.
+Les deux objets sont distincts : modifier l'un ne modifie pas automatiquement l'autre.
 
 </div>
 
@@ -858,7 +987,9 @@ Les objets utilisent les <strong>méthodes définies par leur classe</strong>.
 <div class="border-t border-gray-200 mt-7 pt-4 text-center text-lg font-medium">
 
 Une <strong>classe</strong> définit le modèle
+
 <span class="text-gray-300 mx-3">→</span>
-les <strong>objets</strong> sont les réalisations concrètes de ce modèle.
+
+les <strong>objets</strong> sont les réalisations particulières de ce modèle.
 
 </div>
