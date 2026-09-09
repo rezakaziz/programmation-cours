@@ -6,13 +6,15 @@ layout: default
 
 <div class="mt-3 text-lg">
 
-Nous avons défini une classe <code>Point</code> avec deux attributs :
+Nous avons défini une classe <code>Point</code> avec deux attributs.
+
+Mais cette classe représente-t-elle déjà un point précis ?
 
 </div>
 
 <div class="flex justify-center mt-5">
 
-```mermaid {theme: 'neutral', scale: 0.72}
+```mermaid {theme: 'neutral', scale: 0.68}
 classDiagram
     class Point {
         x : int
@@ -22,15 +24,9 @@ classDiagram
 
 </div>
 
-<div class="mt-5 text-center text-lg">
+<div class="grid grid-cols-2 gap-8 mt-4 text-center">
 
-Mais cette classe représente-t-elle déjà un point précis ?
-
-</div>
-
-<div class="grid grid-cols-2 gap-8 mt-5 text-center">
-
-<div class="border border-gray-200 rounded-lg p-4">
+<div>
 
 <div class="font-medium">
 La classe <code>Point</code>
@@ -40,35 +36,25 @@ La classe <code>Point</code>
 décrit les informations communes
 </div>
 
-<div class="mt-3">
-<code>x</code> · <code>y</code>
 </div>
 
-</div>
-
-<div class="border border-gray-200 rounded-lg p-4">
+<div class="border-l border-gray-200 pl-8">
 
 <div class="font-medium">
 Un point particulier
 </div>
 
 <div class="text-sm text-gray-500 mt-2">
-possède des valeurs précises
-</div>
-
-<div class="mt-3">
-<code>x = 3</code> · <code>y = 5</code>
+possède des valeurs précises : <code>x = 3</code> · <code>y = 5</code>
 </div>
 
 </div>
 
 </div>
 
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
-La <strong>classe</strong> décrit le modèle.
-
-Un <strong>objet</strong> représente un élément particulier créé à partir de ce modèle.
+La <strong>classe</strong> décrit le modèle ; un <strong>objet</strong> représente une réalisation particulière de ce modèle.
 
 </div>
 
@@ -80,11 +66,11 @@ layout: default
 
 <div class="mt-3 text-lg">
 
-Prenons deux points du plan :
+Prenons deux points du plan qui suivent tous les deux le modèle <code>Point</code>.
 
 </div>
 
-<div class="grid grid-cols-2 gap-10 mt-7 text-center">
+<div class="grid grid-cols-2 gap-8 mt-6 text-center">
 
 <div class="border border-gray-200 rounded-lg p-5">
 
@@ -96,7 +82,7 @@ POINT A
 <code>(2, 5)</code>
 </div>
 
-<div class="mt-3 text-sm text-gray-500">
+<div class="text-sm text-gray-500 mt-2">
 x = 2 · y = 5
 </div>
 
@@ -112,7 +98,7 @@ POINT B
 <code>(8, 1)</code>
 </div>
 
-<div class="mt-3 text-sm text-gray-500">
+<div class="text-sm text-gray-500 mt-2">
 x = 8 · y = 1
 </div>
 
@@ -120,25 +106,15 @@ x = 8 · y = 1
 
 </div>
 
-<div class="mt-6 text-center text-lg">
+<div class="mt-5 text-center text-gray-500">
 
-Ces deux points suivent le même modèle <code>Point</code>,
-
-mais possèdent leurs <strong>propres valeurs</strong>.
+Ils suivent le même modèle, mais possèdent leurs <strong>propres valeurs</strong>.
 
 </div>
 
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
-Chaque point est un <strong>objet</strong> de la classe <code>Point</code>.
-
-<br>
-
-<span class="text-gray-500">
-
-On dit aussi : une <strong>instance</strong> de la classe <code>Point</code>.
-
-</span>
+Chaque point est un <strong>objet</strong>, aussi appelé une <strong>instance</strong> de la classe <code>Point</code>.
 
 </div>
 
@@ -154,12 +130,12 @@ Une même classe peut servir à créer <strong>plusieurs objets</strong>.
 
 </div>
 
-<div class="grid grid-cols-[1fr_100px_2fr] gap-6 mt-7 items-center">
+<div class="grid grid-cols-2 gap-8 mt-5">
 
-<div class="text-center">
+<div>
 
-<div class="text-sm font-medium text-gray-400 mb-3">
-MODÈLE
+<div class="text-center font-medium mb-3">
+Le modèle
 </div>
 
 ```mermaid {theme: 'neutral', scale: 0.68}
@@ -172,55 +148,45 @@ classDiagram
 
 </div>
 
-<div class="text-center">
+<div class="border-l border-gray-200 pl-8">
 
-<div class="text-3xl text-gray-300">→</div>
-
-<div class="text-xs text-gray-500 mt-2">
-permet de créer
+<div class="text-center font-medium mb-3">
+Les objets
 </div>
 
-</div>
+<div class="grid grid-cols-3 gap-3 text-center">
 
-<div>
-
-<div class="text-sm font-medium text-gray-400 mb-3 text-center">
-OBJETS
-</div>
-
-<div class="grid grid-cols-3 gap-3">
-
-<div class="border border-gray-200 rounded-lg p-4 text-center">
+<div class="border border-gray-200 rounded-lg p-4">
 
 <div class="text-sm text-gray-400">
-Point A
+A
 </div>
 
-<div class="font-medium mt-2">
+<div class="mt-2">
 <code>(2, 5)</code>
 </div>
 
 </div>
 
-<div class="border border-gray-200 rounded-lg p-4 text-center">
+<div class="border border-gray-200 rounded-lg p-4">
 
 <div class="text-sm text-gray-400">
-Point B
+B
 </div>
 
-<div class="font-medium mt-2">
+<div class="mt-2">
 <code>(8, 1)</code>
 </div>
 
 </div>
 
-<div class="border border-gray-200 rounded-lg p-4 text-center">
+<div class="border border-gray-200 rounded-lg p-4">
 
 <div class="text-sm text-gray-400">
-Point C
+C
 </div>
 
-<div class="font-medium mt-2">
+<div class="mt-2">
 <code>(-1, 4)</code>
 </div>
 
@@ -232,17 +198,9 @@ Point C
 
 </div>
 
-<div class="border-t border-gray-200 mt-7 pt-4 text-center font-medium">
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
-Même <strong>classe</strong>
-
-<span class="text-gray-300 mx-3">→</span>
-
-mêmes <strong>attributs</strong>
-
-<span class="text-gray-300 mx-3">→</span>
-
-valeurs différentes pour chaque <strong>objet</strong>
+Même <strong>classe</strong> → mêmes attributs, mais valeurs différentes pour chaque <strong>objet</strong>.
 
 </div>
 
@@ -258,13 +216,7 @@ Les valeurs des attributs d'un objet décrivent son <strong>état</strong>.
 
 </div>
 
-<div class="mt-6 text-center text-gray-500">
-
-Prenons deux objets de la classe <code>Point</code> :
-
-</div>
-
-<div class="grid grid-cols-2 gap-10 mt-5 text-center">
+<div class="grid grid-cols-2 gap-8 mt-6 text-center">
 
 <div class="border border-gray-200 rounded-lg p-5">
 
@@ -273,16 +225,10 @@ OBJET A
 </div>
 
 <div class="mt-3 text-xl">
-
-<code>x = 2</code>
-
-<span class="text-gray-300 mx-3">•</span>
-
-<code>y = 5</code>
-
+<code>x = 2</code> · <code>y = 5</code>
 </div>
 
-<div class="mt-4 font-medium">
+<div class="text-sm text-gray-500 mt-3">
 État : <code>(2, 5)</code>
 </div>
 
@@ -295,16 +241,10 @@ OBJET B
 </div>
 
 <div class="mt-3 text-xl">
-
-<code>x = 8</code>
-
-<span class="text-gray-300 mx-3">•</span>
-
-<code>y = 1</code>
-
+<code>x = 8</code> · <code>y = 1</code>
 </div>
 
-<div class="mt-4 font-medium">
+<div class="text-sm text-gray-500 mt-3">
 État : <code>(8, 1)</code>
 </div>
 
@@ -312,9 +252,15 @@ OBJET B
 
 </div>
 
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div class="mt-5 text-center text-gray-500">
 
-L'<strong>état d'un objet</strong> correspond aux valeurs de ses attributs à un instant donné.
+Deux objets d'une même classe peuvent donc posséder des états différents.
+
+</div>
+
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+
+L'<strong>état</strong> d'un objet correspond aux valeurs de ses attributs à un instant donné.
 
 </div>
 
@@ -330,9 +276,9 @@ Un objet peut évoluer pendant l'exécution du programme.
 
 </div>
 
-<div class="flex justify-center items-center gap-8 mt-10">
+<div class="flex justify-center items-center gap-10 mt-8">
 
-<div class="border border-gray-200 rounded-lg p-5 text-center">
+<div class="border border-gray-200 rounded-lg px-12 py-5 text-center">
 
 <div class="text-sm text-gray-400">
 AVANT
@@ -356,7 +302,7 @@ AVANT
 
 </div>
 
-<div class="border border-gray-200 rounded-lg p-5 text-center">
+<div class="border border-gray-200 rounded-lg px-12 py-5 text-center">
 
 <div class="text-sm text-gray-400">
 APRÈS
@@ -370,17 +316,15 @@ APRÈS
 
 </div>
 
-<div class="mt-7 text-center text-lg">
+<div class="mt-6 text-center text-gray-500">
 
-L'objet reste <strong>le même</strong>,
-
-mais son <strong>état a changé</strong>.
+L'objet reste <strong>le même</strong>, mais ses valeurs ont changé.
 
 </div>
 
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
-Les méthodes permettent notamment de consulter ou de faire évoluer l'état d'un objet.
+Les méthodes peuvent notamment consulter ou faire évoluer l'<strong>état</strong> d'un objet.
 
 </div>
 
@@ -392,11 +336,11 @@ layout: default
 
 <div class="mt-3 text-lg">
 
-Observons maintenant ces deux objets :
+Deux objets distincts peuvent posséder exactement les mêmes valeurs.
 
 </div>
 
-<div class="grid grid-cols-2 gap-10 mt-7 text-center">
+<div class="grid grid-cols-2 gap-8 mt-6 text-center">
 
 <div class="border border-gray-200 rounded-lg p-5">
 
@@ -405,7 +349,7 @@ OBJET A
 </div>
 
 <div class="mt-3 text-xl">
-<code>x = 3</code> · <code>y = 5</code>
+<code>(3, 5)</code>
 </div>
 
 </div>
@@ -417,26 +361,20 @@ OBJET B
 </div>
 
 <div class="mt-3 text-xl">
-<code>x = 3</code> · <code>y = 5</code>
+<code>(3, 5)</code>
 </div>
 
 </div>
 
 </div>
 
-<div class="mt-7 text-center text-xl font-medium">
+<div class="mt-6 text-center text-xl font-medium">
 
 Même état
 
 <span class="text-gray-300 mx-4">≠</span>
 
 même objet
-
-</div>
-
-<div class="mt-5 text-center text-gray-500">
-
-A et B possèdent les mêmes valeurs, mais restent deux objets distincts.
 
 </div>
 
@@ -458,7 +396,7 @@ L'<strong>identité</strong> permet de distinguer un objet de tous les autres.
 
 </div>
 
-<div class="grid grid-cols-[1fr_100px_1fr] gap-6 mt-8 items-center text-center">
+<div class="grid grid-cols-2 gap-8 mt-6 text-center">
 
 <div class="border border-gray-200 rounded-lg p-5">
 
@@ -470,16 +408,8 @@ OBJET A
 <code>(3, 5)</code>
 </div>
 
-<div class="mt-3 text-sm text-gray-500">
+<div class="text-sm text-gray-500 mt-3">
 une identité propre
-</div>
-
-</div>
-
-<div>
-
-<div class="text-2xl text-gray-300">
-≠
 </div>
 
 </div>
@@ -494,7 +424,7 @@ OBJET B
 <code>(3, 5)</code>
 </div>
 
-<div class="mt-3 text-sm text-gray-500">
+<div class="text-sm text-gray-500 mt-3">
 une autre identité
 </div>
 
@@ -502,15 +432,15 @@ une autre identité
 
 </div>
 
-<div class="mt-7 text-center">
+<div class="mt-5 text-center text-gray-500">
 
 Les valeurs sont identiques, mais il s'agit toujours de <strong>deux objets différents</strong>.
 
 </div>
 
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
-L'identité d'un objet est indépendante de son état.
+L'identité d'un objet est indépendante de son <strong>état</strong>.
 
 </div>
 
@@ -520,13 +450,13 @@ layout: default
 
 # Un objet : trois notions à retenir
 
-<div class="mt-3 text-lg text-center">
+<div class="mt-3 text-lg">
 
 Pour décrire un objet, on distingue trois notions.
 
 </div>
 
-<div class="grid grid-cols-3 gap-5 mt-7 text-center">
+<div class="grid grid-cols-3 gap-5 mt-6 text-center">
 
 <div class="border border-gray-200 rounded-lg p-5">
 
@@ -534,16 +464,12 @@ Pour décrire un objet, on distingue trois notions.
 🪪
 </div>
 
-<div class="font-medium text-lg mt-2">
+<div class="font-medium mt-3">
 Identité
 </div>
 
-<div class="text-sm text-gray-500 mt-3">
-Qui est cet objet ?
-</div>
-
-<div class="mt-3 text-sm">
-Le distingue des autres.
+<div class="text-sm text-gray-500 mt-2">
+Le distingue des autres objets.
 </div>
 
 </div>
@@ -554,16 +480,12 @@ Le distingue des autres.
 📦
 </div>
 
-<div class="font-medium text-lg mt-2">
+<div class="font-medium mt-3">
 État
 </div>
 
-<div class="text-sm text-gray-500 mt-3">
-Quelles sont ses valeurs ?
-</div>
-
-<div class="mt-3 text-sm">
-Déterminé par ses attributs.
+<div class="text-sm text-gray-500 mt-2">
+Correspond aux valeurs de ses attributs.
 </div>
 
 </div>
@@ -574,25 +496,21 @@ Déterminé par ses attributs.
 ⚙️
 </div>
 
-<div class="font-medium text-lg mt-2">
+<div class="font-medium mt-3">
 Comportement
 </div>
 
-<div class="text-sm text-gray-500 mt-3">
-Que peut-il faire ?
-</div>
-
-<div class="mt-3 text-sm">
-Déterminé par ses méthodes.
+<div class="text-sm text-gray-500 mt-2">
+Correspond aux opérations disponibles.
 </div>
 
 </div>
 
 </div>
 
-<div class="border-t border-gray-200 mt-7 pt-4 text-center font-medium">
+<div class="border-t border-gray-200 mt-6 pt-4 text-center text-lg font-medium">
 
-Objet = <strong>identité</strong> + <strong>état</strong> + <strong>comportement</strong>
+Un objet possède une <strong>identité</strong>, un <strong>état</strong> et un <strong>comportement</strong>.
 
 </div>
 
@@ -604,71 +522,55 @@ layout: default
 
 <div class="mt-3 text-lg">
 
-Nous savons ce qu'est un objet. Voyons maintenant comment en créer un en Java.
+En Java, l'opérateur <code>new</code> permet de créer un nouvel objet.
 
 </div>
-
-<div class="mt-6">
 
 ```java
 Point p = new Point();
 ```
 
-</div>
-
-<div class="grid grid-cols-3 gap-5 mt-6 text-center">
+<div class="grid grid-cols-3 gap-5 mt-5 text-center">
 
 <div class="border border-gray-200 rounded-lg p-4">
 
-<div class="font-medium text-lg">
+<div class="text-lg font-medium">
 <code>Point</code>
 </div>
 
 <div class="text-sm text-gray-500 mt-2">
-Le type
-</div>
-
-<div class="text-sm mt-2">
-Indique qu'il s'agit d'un objet de type <code>Point</code>.
+Type de la variable.
 </div>
 
 </div>
 
 <div class="border border-gray-200 rounded-lg p-4">
 
-<div class="font-medium text-lg">
+<div class="text-lg font-medium">
 <code>p</code>
 </div>
 
 <div class="text-sm text-gray-500 mt-2">
-La variable
-</div>
-
-<div class="text-sm mt-2">
-Permet d'accéder à l'objet.
+Variable permettant d'accéder à l'objet.
 </div>
 
 </div>
 
 <div class="border border-gray-200 rounded-lg p-4">
 
-<div class="font-medium text-lg">
+<div class="text-lg font-medium">
 <code>new Point()</code>
 </div>
 
 <div class="text-sm text-gray-500 mt-2">
-La création
-</div>
-
-<div class="text-sm mt-2">
-Crée un nouvel objet.
+Création d'un nouvel objet.
 </div>
 
 </div>
 
 </div>
 
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
 À chaque exécution de <code>new Point()</code>, un <strong>nouvel objet</strong> est créé.
 
@@ -695,21 +597,37 @@ p.y = 5;
 p.afficher();
 ```
 
-<div class="mt-5 text-center text-gray-500">
+<div class="grid grid-cols-2 gap-8 mt-4 text-center">
 
-Le point désigné par <code>p</code> possède maintenant l'état :
+<div>
 
+<div class="font-medium">
+État de l'objet
 </div>
 
-<div class="mt-4 text-center text-2xl font-medium">
-
+<div class="text-xl mt-2">
 <code>(3, 5)</code>
+</div>
 
 </div>
 
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div class="border-l border-gray-200 pl-8">
 
-L'opérateur <code>.</code> permet d'accéder à un membre d'un objet.
+<div class="font-medium">
+Appel de méthode
+</div>
+
+<div class="mt-2">
+<code>p.afficher()</code>
+</div>
+
+</div>
+
+</div>
+
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+
+L'opérateur <code>.</code> permet d'accéder à un membre de l'objet.
 
 </div>
 
@@ -721,7 +639,7 @@ layout: default
 
 <div class="mt-3 text-lg">
 
-Nous pouvons aussi demander à l'objet d'exécuter une méthode.
+Une méthode peut agir sur l'état de l'objet sur lequel elle est appelée.
 
 </div>
 
@@ -734,15 +652,15 @@ p.y = 5;
 p.deplacer(3, 1);
 ```
 
-<div class="flex justify-center items-center gap-8 mt-6">
+<div class="flex justify-center items-center gap-10 mt-4">
 
-<div class="border border-gray-200 rounded-lg p-4 text-center">
+<div class="text-center">
 
 <div class="text-sm text-gray-400">
 AVANT
 </div>
 
-<div class="mt-2 text-xl">
+<div class="text-xl mt-2">
 <code>(2, 5)</code>
 </div>
 
@@ -752,13 +670,13 @@ AVANT
 →
 </div>
 
-<div class="border border-gray-200 rounded-lg p-4 text-center">
+<div class="text-center">
 
 <div class="text-sm text-gray-400">
 APRÈS
 </div>
 
-<div class="mt-2 text-xl">
+<div class="text-xl mt-2">
 <code>(5, 6)</code>
 </div>
 
@@ -766,7 +684,7 @@ APRÈS
 
 </div>
 
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
 L'appel <code>p.deplacer(...)</code> agit sur l'<strong>objet désigné par <code>p</code></strong>.
 
@@ -795,21 +713,15 @@ p2.x = 3;
 p2.y = 5;
 ```
 
-<div class="mt-4 text-center text-xl font-medium">
-
-❓ Combien d'objets <code>Point</code> avons-nous créés ?
-
-</div>
-
-<div class="grid grid-cols-2 gap-8 mt-5 text-center">
+<div class="grid grid-cols-2 gap-8 mt-4 text-center">
 
 <div class="border border-gray-200 rounded-lg p-4">
 
 <div class="font-medium">
-Objet accessible via <code>p1</code>
+<code>p1</code>
 </div>
 
-<div class="mt-2">
+<div class="text-lg mt-2">
 <code>(3, 5)</code>
 </div>
 
@@ -818,10 +730,10 @@ Objet accessible via <code>p1</code>
 <div class="border border-gray-200 rounded-lg p-4">
 
 <div class="font-medium">
-Objet accessible via <code>p2</code>
+<code>p2</code>
 </div>
 
-<div class="mt-2">
+<div class="text-lg mt-2">
 <code>(3, 5)</code>
 </div>
 
@@ -829,12 +741,10 @@ Objet accessible via <code>p2</code>
 
 </div>
 
-<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+<div class="border-t border-gray-200 mt-4 pt-3 text-center font-medium">
 
 <strong>2 appels</strong> à <code>new Point()</code>
-
-<span class="text-gray-300 mx-2">→</span>
-
+<span class="text-gray-300 mx-3">→</span>
 <strong>2 objets distincts</strong>
 
 </div>
@@ -847,7 +757,7 @@ layout: default
 
 <div class="mt-3 text-lg">
 
-Que se passe-t-il si nous déplaçons uniquement <code>p1</code> ?
+Déplaçons maintenant uniquement l'objet désigné par <code>p1</code>.
 
 </div>
 
@@ -855,66 +765,47 @@ Que se passe-t-il si nous déplaçons uniquement <code>p1</code> ?
 Point p1 = new Point();
 Point p2 = new Point();
 
-p1.x = 3;
-p1.y = 5;
-
-p2.x = 3;
-p2.y = 5;
+p1.x = 3; p1.y = 5;
+p2.x = 3; p2.y = 5;
 
 p1.deplacer(2, 1);
 ```
 
-<div class="grid grid-cols-2 gap-8 mt-5 text-center">
+<div class="grid grid-cols-2 gap-8 mt-4 text-center">
 
-<div class="border border-gray-200 rounded-lg p-4">
+<div>
 
 <div class="font-medium">
 <code>p1</code>
 </div>
 
-<div class="mt-3">
-
+<div class="mt-2">
 <code>(3, 5)</code>
-
 <span class="text-gray-300 mx-2">→</span>
-
 <strong><code>(5, 6)</code></strong>
-
-</div>
-
-<div class="text-sm text-gray-500 mt-2">
-son état change
 </div>
 
 </div>
 
-<div class="border border-gray-200 rounded-lg p-4">
+<div class="border-l border-gray-200 pl-8">
 
 <div class="font-medium">
 <code>p2</code>
 </div>
 
-<div class="mt-3">
-
+<div class="mt-2">
 <code>(3, 5)</code>
-
 <span class="text-gray-300 mx-2">→</span>
-
 <strong><code>(3, 5)</code></strong>
-
-</div>
-
-<div class="text-sm text-gray-500 mt-2">
-son état ne change pas
 </div>
 
 </div>
 
 </div>
 
-<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+<div class="border-t border-gray-200 mt-4 pt-3 text-center font-medium">
 
-Les deux objets sont distincts : modifier l'un ne modifie pas automatiquement l'autre.
+Modifier un objet ne modifie pas automatiquement les autres objets de la même classe.
 
 </div>
 
@@ -924,72 +815,61 @@ layout: default
 
 # À retenir : les objets
 
-<div class="grid grid-cols-2 gap-6 mt-6">
+<div class="grid grid-cols-2 gap-5 mt-5">
 
-<div class="border border-gray-200 rounded-lg p-5">
+<div class="border border-gray-200 rounded-lg p-4">
 
 <div class="font-medium text-lg">
 🧩 Instance
 </div>
 
 <div class="text-sm text-gray-500 mt-2">
-
 Un objet est une <strong>instance d'une classe</strong>.
-
 </div>
 
 </div>
 
-<div class="border border-gray-200 rounded-lg p-5">
+<div class="border border-gray-200 rounded-lg p-4">
 
 <div class="font-medium text-lg">
 📦 État
 </div>
 
 <div class="text-sm text-gray-500 mt-2">
-
 Chaque objet possède ses <strong>propres valeurs d'attributs</strong>.
-
 </div>
 
 </div>
 
-<div class="border border-gray-200 rounded-lg p-5">
+<div class="border border-gray-200 rounded-lg p-4">
 
 <div class="font-medium text-lg">
 🪪 Identité
 </div>
 
 <div class="text-sm text-gray-500 mt-2">
-
-Deux objets peuvent avoir le même état tout en restant <strong>distincts</strong>.
-
+Deux objets de même état peuvent rester <strong>distincts</strong>.
 </div>
 
 </div>
 
-<div class="border border-gray-200 rounded-lg p-5">
+<div class="border border-gray-200 rounded-lg p-4">
 
 <div class="font-medium text-lg">
 ⚙️ Comportement
 </div>
 
 <div class="text-sm text-gray-500 mt-2">
-
-Les objets utilisent les <strong>méthodes définies par leur classe</strong>.
-
+Les méthodes définissent les opérations disponibles.
 </div>
 
 </div>
 
 </div>
 
-<div class="border-t border-gray-200 mt-7 pt-4 text-center text-lg font-medium">
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
-Une <strong>classe</strong> définit le modèle
-
-<span class="text-gray-300 mx-3">→</span>
-
-les <strong>objets</strong> sont les réalisations particulières de ce modèle.
+Une <strong>classe</strong> définit le modèle ; les <strong>objets</strong> sont les réalisations particulières de ce modèle.
 
 </div>
+

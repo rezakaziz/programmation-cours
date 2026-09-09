@@ -70,38 +70,30 @@ En Java, les attributs d'un objet reçoivent des <strong>valeurs par défaut</st
 
 ```java
 class Point {
-
     int x;
     int y;
-
 }
 ```
 
-<div class="flex justify-center mt-5">
+<div class="flex justify-center mt-4">
 
-<div class="border border-gray-200 rounded-lg px-10 py-5 text-center">
+<div class="border border-gray-200 rounded-lg px-10 py-4 text-center">
 
 <div class="text-sm text-gray-400">
-APRÈS
+APRÈS <code>new Point()</code>
 </div>
 
-<div class="mt-2 font-medium">
-<code>new Point()</code>
-</div>
-
-<div class="mt-4 text-xl">
-
+<div class="mt-3 text-xl">
 <code>x = 0</code>
 <span class="text-gray-300 mx-3">•</span>
 <code>y = 0</code>
-
 </div>
 
 </div>
 
 </div>
 
-<div class="mt-5 text-center text-gray-500">
+<div class="mt-4 text-center text-gray-500">
 
 Pour les attributs de type <code>int</code>, Java utilise par défaut la valeur <code>0</code>.
 
@@ -125,7 +117,7 @@ Nous aimerions pouvoir créer directement un point avec les coordonnées souhait
 
 </div>
 
-<div class="flex justify-center mt-7">
+<div class="flex justify-center mt-6">
 
 ```mermaid {theme: 'neutral', scale: 0.7}
 flowchart LR
@@ -138,13 +130,13 @@ flowchart LR
 
 </div>
 
-<div class="mt-6 text-center text-lg">
+<div class="mt-5 text-center text-lg">
 
 Les valeurs sont fournies pendant la création de l'objet.
 
 </div>
 
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
 Java fournit pour cela un mécanisme particulier : le <strong>constructeur</strong>.
 
@@ -164,9 +156,9 @@ Il permet notamment de déterminer son <strong>état initial</strong>.
 
 </div>
 
-<div class="flex justify-center mt-6">
+<div class="flex justify-center mt-5">
 
-```mermaid {theme: 'neutral', scale: 0.7}
+```mermaid {theme: 'neutral', scale: 0.68}
 flowchart LR
     C["Création<br/>new ..."]
     K["Constructeur"]
@@ -177,7 +169,7 @@ flowchart LR
 
 </div>
 
-<div class="grid grid-cols-2 gap-8 mt-5">
+<div class="grid grid-cols-2 gap-8 mt-4">
 
 <div class="text-center">
 
@@ -198,7 +190,7 @@ Initialisation
 </div>
 
 <div class="text-sm text-gray-500 mt-2">
-Le constructeur donne ses valeurs initiales à l'objet.
+Le constructeur fixe ses valeurs initiales.
 </div>
 
 </div>
@@ -225,7 +217,6 @@ Ajoutons un constructeur à notre classe <code>Point</code>.
 
 ```java
 class Point {
-
     int x;
     int y;
 
@@ -236,7 +227,7 @@ class Point {
 }
 ```
 
-<div class="grid grid-cols-2 gap-8 mt-5 text-center">
+<div class="grid grid-cols-2 gap-8 mt-4 text-center">
 
 <div class="border border-gray-200 rounded-lg p-4">
 
@@ -264,7 +255,7 @@ Paramètres du constructeur
 
 </div>
 
-<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+<div class="border-t border-gray-200 mt-4 pt-3 text-center font-medium">
 
 Un constructeur porte le <strong>même nom que la classe</strong> et ne possède <strong>aucun type de retour</strong>.
 
@@ -283,7 +274,7 @@ Point(int px, int py) {
 }
 ```
 
-<div class="grid grid-cols-2 gap-8 mt-6 text-center">
+<div class="grid grid-cols-2 gap-8 mt-5 text-center">
 
 <div class="border border-gray-200 rounded-lg p-5">
 
@@ -292,9 +283,7 @@ Point(int px, int py) {
 </div>
 
 <div class="text-sm text-gray-500 mt-3">
-
 Valeurs reçues par le constructeur.
-
 </div>
 
 </div>
@@ -306,16 +295,14 @@ Valeurs reçues par le constructeur.
 </div>
 
 <div class="text-sm text-gray-500 mt-3">
-
 Attributs de l'objet en cours de création.
-
 </div>
 
 </div>
 
 </div>
 
-<div class="mt-6 text-center text-lg">
+<div class="mt-5 text-center text-lg">
 
 <code>x = px;</code>
 <span class="text-gray-300 mx-3">•</span>
@@ -345,7 +332,7 @@ Les valeurs nécessaires sont fournies au moment de la création.
 Point p = new Point(3, 5);
 ```
 
-<div class="flex justify-center mt-6">
+<div class="flex justify-center mt-5">
 
 ```mermaid {theme: 'neutral', scale: 0.68}
 flowchart LR
@@ -358,19 +345,17 @@ flowchart LR
 
 </div>
 
-<div class="mt-5 text-center">
+<div class="mt-4 text-center">
 
-<code>3</code> est transmis à <code>px</code>.
-
-<br>
-
-<code>5</code> est transmis à <code>py</code>.
+<code>3</code> est transmis à <code>px</code>
+<span class="text-gray-300 mx-3">•</span>
+<code>5</code> est transmis à <code>py</code>
 
 </div>
 
 <div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
-Les arguments fournis servent à déterminer <strong>l'état initial de l'objet</strong>.
+Les arguments fournis déterminent <strong>l'état initial de l'objet</strong>.
 
 </div>
 
@@ -399,9 +384,7 @@ ARGUMENTS
 </div>
 
 <div class="text-sm text-gray-500 mt-3">
-
 Valeurs fournies lors de l'appel.
-
 </div>
 
 </div>
@@ -417,26 +400,20 @@ PARAMÈTRES
 </div>
 
 <div class="text-sm text-gray-500 mt-3">
-
-Variables utilisées pour recevoir ces valeurs.
-
+Variables qui reçoivent ces valeurs.
 </div>
 
 </div>
 
 </div>
 
-<div class="mt-6 text-center">
+<div class="mt-5 text-center text-lg">
 
-```java
-new Point(3, 5)
-```
+<code>new Point(3, 5)</code>
 
 <span class="text-gray-300 mx-4">→</span>
 
-```java
-Point(int px, int py)
-```
+<code>Point(int px, int py)</code>
 
 </div>
 
@@ -462,7 +439,7 @@ Que se passe-t-il lors de cette création ?
 Point p = new Point(4, 7);
 ```
 
-<div class="grid grid-cols-3 gap-5 mt-6 text-center">
+<div class="grid grid-cols-3 gap-5 mt-5 text-center">
 
 <div class="border border-gray-200 rounded-lg p-4">
 
@@ -502,21 +479,17 @@ Point p = new Point(4, 7);
 
 </div>
 
-<div class="mt-7 text-center font-medium">
+<div class="mt-5 text-center font-medium">
 
 Arguments
-
 <span class="text-gray-300 mx-3">→</span>
-
 Paramètres
-
 <span class="text-gray-300 mx-3">→</span>
-
 Attributs
 
 </div>
 
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
 Le nouvel objet possède donc l'état <code>(4, 7)</code>.
 
@@ -540,7 +513,7 @@ Point p2 = new Point(8, 1);
 Point p3 = new Point(2, 5);
 ```
 
-<div class="flex justify-center mt-5">
+<div class="flex justify-center mt-4">
 
 ```mermaid {theme: 'neutral', scale: 0.62}
 flowchart LR
@@ -561,64 +534,6 @@ Chaque appel à <code>new</code> crée un <strong>nouvel objet</strong> et exéc
 layout: default
 ---
 
-# Vérification
-
-<div class="mt-3 text-lg">
-
-Considérons ce constructeur :
-
-</div>
-
-```java
-Point(int px, int py) {
-    x = px;
-    y = py;
-}
-```
-
-<div class="mt-5 text-center font-medium text-lg">
-
-Quel sera l'état de chaque objet ?
-
-</div>
-
-```java
-Point p1 = new Point(4, 7);
-Point p2 = new Point(-2, 3);
-```
-
-<div class="grid grid-cols-2 gap-8 mt-5 text-center">
-
-<div class="border border-gray-200 rounded-lg p-4">
-
-<div class="font-medium">
-<code>p1</code>
-</div>
-
-<div class="mt-3 text-lg">
-<code>(4, 7)</code>
-</div>
-
-</div>
-
-<div class="border border-gray-200 rounded-lg p-4">
-
-<div class="font-medium">
-<code>p2</code>
-</div>
-
-<div class="mt-3 text-lg">
-<code>(-2, 3)</code>
-</div>
-
-</div>
-
-</div>
-
----
-layout: default
----
-
 # Plusieurs façons d'initialiser un objet
 
 <div class="mt-3 text-lg">
@@ -627,7 +542,7 @@ Une classe peut proposer plusieurs façons d'initialiser ses objets.
 
 </div>
 
-<div class="grid grid-cols-2 gap-8 mt-7 text-center">
+<div class="grid grid-cols-2 gap-8 mt-6 text-center">
 
 <div class="border border-gray-200 rounded-lg p-5">
 
@@ -640,9 +555,7 @@ Sans coordonnées
 </div>
 
 <div class="text-sm text-gray-500 mt-3">
-
 Le point commence à l'origine.
-
 </div>
 
 <div class="mt-2">
@@ -662,9 +575,7 @@ Avec des coordonnées
 </div>
 
 <div class="text-sm text-gray-500 mt-3">
-
-Le point commence avec les valeurs fournies.
-
+Le point utilise les valeurs fournies.
 </div>
 
 <div class="mt-2">
@@ -687,9 +598,12 @@ layout: default
 
 # Surcharge des constructeurs
 
+<div class="grid grid-cols-2 gap-8 mt-4 items-center">
+
+<div>
+
 ```java
 class Point {
-
     int x;
     int y;
 
@@ -705,36 +619,47 @@ class Point {
 }
 ```
 
-<div class="grid grid-cols-2 gap-8 mt-5 text-center">
+</div>
 
-<div class="border border-gray-200 rounded-lg p-4">
+<div class="space-y-5">
 
+<div class="border border-gray-200 rounded-lg p-4 text-center">
+
+<div class="font-medium">
 <code>new Point()</code>
+</div>
 
 <div class="text-sm text-gray-500 mt-2">
+
 → utilise <code>Point()</code>
-</div>
 
 </div>
 
-<div class="border border-gray-200 rounded-lg p-4">
+</div>
 
+<div class="border border-gray-200 rounded-lg p-4 text-center">
+
+<div class="font-medium">
 <code>new Point(3, 5)</code>
+</div>
 
 <div class="text-sm text-gray-500 mt-2">
+
 → utilise <code>Point(int, int)</code>
-</div>
 
 </div>
 
 </div>
 
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+</div>
+
+</div>
+
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
 Même nom, mais <strong>listes de paramètres différentes</strong> : c'est la surcharge.
 
 </div>
-
 ---
 layout: default
 ---
@@ -803,32 +728,38 @@ Considérons cette classe :
 
 ```java
 class Point {
-
     int x;
     int y;
-
 }
 ```
 
-<div class="mt-5 text-center font-medium text-lg">
+<div class="grid grid-cols-2 gap-8 mt-5 items-center">
 
+<div class="text-center">
+
+<div class="font-medium text-lg">
 Cette instruction est-elle valide ?
+</div>
+
+<div class="mt-3 text-xl">
+<code>new Point()</code>
+</div>
 
 </div>
 
-```java
-Point p = new Point();
-```
+<div class="border-l border-gray-200 pl-8 text-center">
 
-<div class="mt-5 text-center text-xl font-medium">
-
+<div class="text-2xl font-medium">
 Oui.
+</div>
+
+<div class="text-sm text-gray-500 mt-3">
+
+Comme aucun constructeur n'est déclaré, Java fournit automatiquement un constructeur sans paramètre.
 
 </div>
 
-<div class="mt-3 text-center text-gray-500">
-
-Comme aucun constructeur n'a été déclaré, Java fournit automatiquement un <strong>constructeur sans paramètre</strong>.
+</div>
 
 </div>
 
@@ -900,7 +831,6 @@ Dès que nous déclarons nous-mêmes un constructeur :
 
 ```java
 class Point {
-
     int x;
     int y;
 
@@ -911,7 +841,7 @@ class Point {
 }
 ```
 
-<div class="grid grid-cols-2 gap-8 mt-6 text-center">
+<div class="grid grid-cols-2 gap-8 mt-4 text-center">
 
 <div class="border border-gray-200 rounded-lg p-4">
 
@@ -939,81 +869,9 @@ class Point {
 
 </div>
 
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
 Java ne fournit plus automatiquement le constructeur sans paramètre.
-
-</div>
-
----
-layout: default
----
-
-# À retenir : le constructeur
-
-<div class="grid grid-cols-2 gap-6 mt-6">
-
-<div class="border border-gray-200 rounded-lg p-5">
-
-<div class="font-medium text-lg">
-🏗️ Constructeur
-</div>
-
-<div class="text-sm text-gray-500 mt-3">
-
-Initialise l'objet au moment de sa création.
-
-</div>
-
-</div>
-
-<div class="border border-gray-200 rounded-lg p-5">
-
-<div class="font-medium text-lg">
-✨ <code>new</code>
-</div>
-
-<div class="text-sm text-gray-500 mt-3">
-
-Crée un nouvel objet et provoque l'exécution d'un constructeur.
-
-</div>
-
-</div>
-
-<div class="border border-gray-200 rounded-lg p-5">
-
-<div class="font-medium text-lg">
-📥 Paramètres
-</div>
-
-<div class="text-sm text-gray-500 mt-3">
-
-Permettent de recevoir les valeurs nécessaires à l'initialisation.
-
-</div>
-
-</div>
-
-<div class="border border-gray-200 rounded-lg p-5">
-
-<div class="font-medium text-lg">
-🔁 Surcharge
-</div>
-
-<div class="text-sm text-gray-500 mt-3">
-
-Permet de proposer plusieurs constructeurs avec des paramètres différents.
-
-</div>
-
-</div>
-
-</div>
-
-<div class="border-t border-gray-200 mt-7 pt-4 text-center text-lg font-medium">
-
-Le constructeur permet de déterminer l'<strong>état initial</strong> d'un objet lors de sa création.
 
 </div>
 
@@ -1031,7 +889,6 @@ Jusqu'ici, nous avons utilisé des noms différents pour les attributs et les pa
 
 ```java
 class Point {
-
     int x;
     int y;
 
@@ -1042,23 +899,21 @@ class Point {
 }
 ```
 
-<div class="mt-6 text-center text-lg">
+<div class="mt-5 text-center text-lg">
 
 Mais il serait souvent plus naturel d'appeler les paramètres :
 
 </div>
 
-<div class="mt-4 text-center text-xl">
+<div class="mt-3 text-center text-xl">
 
 <code>x</code>
-
 <span class="text-gray-300 mx-3">et</span>
-
 <code>y</code>
 
 </div>
 
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
 Que se passe-t-il si un <strong>paramètre porte le même nom qu'un attribut</strong> ?
 
@@ -1078,7 +933,6 @@ Essayons d'utiliser les mêmes noms :
 
 ```java
 class Point {
-
     int x;
     int y;
 
@@ -1089,31 +943,33 @@ class Point {
 }
 ```
 
-<div class="mt-5 text-center text-lg">
+<div class="grid grid-cols-2 gap-8 mt-5 items-center">
 
+<div class="text-center">
+
+<div class="text-lg">
 Que signifie réellement :
-
 </div>
 
-<div class="mt-4 text-center text-2xl font-medium">
-
+<div class="mt-3 text-2xl font-medium">
 <code>x = x;</code>
+</div>
 
 </div>
 
-<div class="mt-5 text-center text-gray-500">
+<div class="border-l border-gray-200 pl-8 text-center text-gray-500">
 
 Dans le constructeur, le nom <code>x</code> désigne le <strong>paramètre</strong>.
-
-<br>
 
 L'attribut <code>x</code> n'est donc pas modifié.
 
 </div>
 
+</div>
+
 <div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
-Nous avons besoin d'un moyen de désigner explicitement <strong>l'attribut de l'objet courant</strong>.
+Nous avons besoin de désigner explicitement <strong>l'attribut de l'objet courant</strong>.
 
 </div>
 
@@ -1138,9 +994,7 @@ En Java, <code>this</code> est une <strong>référence vers l'objet courant</str
 </div>
 
 <div class="text-sm text-gray-500 mt-3">
-
 L'attribut <code>x</code> de l'objet courant.
-
 </div>
 
 </div>
@@ -1152,21 +1006,17 @@ L'attribut <code>x</code> de l'objet courant.
 </div>
 
 <div class="text-sm text-gray-500 mt-3">
-
 Le paramètre <code>x</code> du constructeur.
-
 </div>
 
 </div>
 
 </div>
 
-<div class="mt-6 text-center text-xl">
+<div class="mt-5 text-center text-xl">
 
 <code>this.x</code>
-
 <span class="text-gray-300 mx-4">≠</span>
-
 <code>x</code>
 
 </div>
@@ -1191,7 +1041,6 @@ Nous pouvons maintenant utiliser les mêmes noms pour les paramètres et les att
 
 ```java
 class Point {
-
     int x;
     int y;
 
@@ -1202,7 +1051,7 @@ class Point {
 }
 ```
 
-<div class="grid grid-cols-2 gap-8 mt-5 text-center">
+<div class="grid grid-cols-2 gap-8 mt-4 text-center">
 
 <div class="border border-gray-200 rounded-lg p-4">
 
@@ -1230,13 +1079,11 @@ paramètre du constructeur
 
 </div>
 
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
 <code>this.x = x;</code>
-
 <span class="text-gray-300 mx-3">→</span>
-
-affecte la valeur du paramètre <code>x</code> à l'attribut <code>x</code> de l'objet courant.
+affecte le paramètre <code>x</code> à l'attribut <code>x</code>.
 
 </div>
 
@@ -1257,7 +1104,7 @@ Point p1 = new Point(3, 5);
 Point p2 = new Point(8, 1);
 ```
 
-<div class="grid grid-cols-2 gap-8 mt-6 text-center">
+<div class="grid grid-cols-2 gap-8 mt-5 text-center">
 
 <div class="border border-gray-200 rounded-lg p-5">
 
@@ -1266,13 +1113,9 @@ Création de <code>p1</code>
 </div>
 
 <div class="mt-3">
-
 <code>this</code>
-
 <span class="text-gray-300 mx-2">→</span>
-
 objet <code>(3, 5)</code>
-
 </div>
 
 </div>
@@ -1284,22 +1127,18 @@ Création de <code>p2</code>
 </div>
 
 <div class="mt-3">
-
 <code>this</code>
-
 <span class="text-gray-300 mx-2">→</span>
-
 objet <code>(8, 1)</code>
-
 </div>
 
 </div>
 
 </div>
 
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
-À chaque exécution du constructeur, <code>this</code> désigne <strong>l'objet concerné par cette exécution</strong>.
+À chaque exécution du constructeur, <code>this</code> désigne <strong>l'objet concerné</strong>.
 
 </div>
 
@@ -1319,7 +1158,6 @@ Il peut également être utilisé dans une <strong>méthode d'instance</strong>.
 
 ```java
 class Point {
-
     int x;
     int y;
 
@@ -1330,13 +1168,13 @@ class Point {
 }
 ```
 
-<div class="mt-5 text-center text-gray-500">
+<div class="mt-4 text-center text-gray-500">
 
 Dans <code>p.deplacer(2, 1)</code>, <code>this</code> désigne l'objet accessible via <code>p</code>.
 
 </div>
 
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
 Dans une méthode d'instance, <code>this</code> désigne <strong>l'objet sur lequel la méthode est appelée</strong>.
 
@@ -1356,7 +1194,6 @@ Considérons :
 
 ```java
 class Point {
-
     int x;
 
     Point(int x) {
@@ -1365,7 +1202,7 @@ class Point {
 }
 ```
 
-<div class="grid grid-cols-2 gap-8 mt-6 text-center">
+<div class="grid grid-cols-2 gap-8 mt-5 text-center">
 
 <div class="border border-gray-200 rounded-lg p-5">
 
@@ -1393,12 +1230,10 @@ désigne le paramètre
 
 </div>
 
-<div class="border-t border-gray-200 mt-7 pt-4 text-center font-medium">
+<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
 
 <code>this.x = x;</code>
-
 <span class="text-gray-300 mx-3">→</span>
-
 paramètre
 <span class="text-gray-300 mx-2">→</span>
 attribut de l'objet courant
@@ -1411,77 +1246,66 @@ layout: default
 
 # À retenir : constructeurs et `this`
 
-<div class="grid grid-cols-2 gap-6 mt-6">
+<div class="grid grid-cols-2 gap-5 mt-5">
 
-<div class="border border-gray-200 rounded-lg p-5">
+<div class="border border-gray-200 rounded-lg p-4">
 
 <div class="font-medium text-lg">
 🏗️ Constructeur
 </div>
 
-<div class="text-sm text-gray-500 mt-3">
-
+<div class="text-sm text-gray-500 mt-2">
 Est exécuté lors de la création d'un objet.
-
 </div>
 
 </div>
 
-<div class="border border-gray-200 rounded-lg p-5">
+<div class="border border-gray-200 rounded-lg p-4">
 
 <div class="font-medium text-lg">
 📥 Arguments
 </div>
 
-<div class="text-sm text-gray-500 mt-3">
-
+<div class="text-sm text-gray-500 mt-2">
 Fournissent les valeurs nécessaires à l'initialisation.
-
 </div>
 
 </div>
 
-<div class="border border-gray-200 rounded-lg p-5">
+<div class="border border-gray-200 rounded-lg p-4">
 
 <div class="font-medium text-lg">
 🔁 Surcharge
 </div>
 
-<div class="text-sm text-gray-500 mt-3">
-
-Permet de définir plusieurs constructeurs avec des paramètres différents.
-
+<div class="text-sm text-gray-500 mt-2">
+Permet de définir plusieurs constructeurs.
 </div>
 
 </div>
 
-<div class="border border-gray-200 rounded-lg p-5">
+<div class="border border-gray-200 rounded-lg p-4">
 
 <div class="font-medium text-lg">
 👆 <code>this</code>
 </div>
 
-<div class="text-sm text-gray-500 mt-3">
-
+<div class="text-sm text-gray-500 mt-2">
 Désigne l'objet courant.
-
 </div>
 
 </div>
 
 </div>
 
-<div class="border-t border-gray-200 mt-7 pt-4 text-center text-lg font-medium">
+<div class="border-t border-gray-200 mt-5 pt-4 text-center text-lg font-medium">
 
 <code>new</code>
 <span class="text-gray-300 mx-2">→</span>
-création de l'objet
+création
 <span class="text-gray-300 mx-2">→</span>
 constructeur
 <span class="text-gray-300 mx-2">→</span>
 état initial
 
 </div>
-
-
-

@@ -22,19 +22,19 @@ La variable <code>p</code> contient-elle directement tout l'objet <code>Point</c
 
 </div>
 
-<div v-click class="mt-6 text-center font-medium text-xl">
+<div v-click class="mt-4 text-center text-xl font-medium">
 
 Non.
 
 </div>
 
-<div v-click class="mt-4 text-center">
+<div v-click class="mt-3 text-center text-gray-500">
 
-<code>p</code> contient une <strong>référence</strong> qui permet de retrouver l'objet.
+<code>p</code> contient une <strong>référence</strong> permettant de retrouver l'objet.
 
 </div>
 
-<div v-click class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div v-click class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
 Variable
 <span class="text-gray-300 mx-3">→</span>
@@ -56,7 +56,7 @@ Une <strong>référence</strong> permet à une variable de désigner un objet.
 
 </div>
 
-<div class="flex items-center justify-center gap-8 mt-7">
+<div class="flex items-center justify-center gap-10 mt-7">
 
 <div class="text-center">
 
@@ -80,7 +80,9 @@ contient une référence
 
 <div class="text-center">
 
-<div class="text-4xl text-gray-300">→</div>
+<div class="text-4xl text-gray-300">
+→
+</div>
 
 <div class="text-sm text-gray-500 mt-2">
 désigne
@@ -110,7 +112,7 @@ Point
 
 </div>
 
-<div v-click class="border-t border-gray-200 mt-7 pt-4 text-center font-medium">
+<div v-click class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
 
 La <strong>variable</strong>, la <strong>référence</strong> et l'<strong>objet</strong> sont trois notions différentes.
 
@@ -122,11 +124,17 @@ layout: default
 
 # Référence en Java
 
+<div class="mt-3 text-lg">
+
+Observons à nouveau la création d'un objet :
+
+</div>
+
 ```java
 Point p = new Point();
 ```
 
-<div class="grid grid-cols-3 gap-5 mt-6 text-center">
+<div class="grid grid-cols-3 gap-5 mt-5 text-center">
 
 <div class="border border-gray-200 rounded-lg p-4">
 
@@ -147,7 +155,7 @@ Type de la variable
 </div>
 
 <div class="text-sm text-gray-500 mt-2">
-Variable qui stocke une référence
+Stocke une référence
 </div>
 
 </div>
@@ -166,13 +174,15 @@ Crée un nouvel objet
 
 </div>
 
-<div v-click class="flex items-center justify-center gap-5 mt-6">
+<div v-click class="flex items-center justify-center gap-5 mt-5">
 
 <div class="border border-gray-200 rounded-lg px-7 py-3">
 <code>p</code>
 </div>
 
-<div class="text-3xl text-gray-300">→</div>
+<div class="text-3xl text-gray-300">
+→
+</div>
 
 <div class="border border-gray-200 rounded-lg px-7 py-3">
 Objet <code>Point</code>
@@ -180,7 +190,7 @@ Objet <code>Point</code>
 
 </div>
 
-<div v-click class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+<div v-click class="border-t border-gray-200 mt-4 pt-3 text-center font-medium">
 
 La référence stockée dans <code>p</code> permet d'accéder à l'objet créé par <code>new</code>.
 
@@ -203,15 +213,15 @@ Point p1 = new Point();
 Point p2 = p1;
 ```
 
-<div class="mt-5 text-center text-xl font-medium">
+<div class="mt-4 text-center text-xl font-medium">
 
 ❓ Combien d'objets ont été créés ?
 
 </div>
 
-<div v-click class="flex justify-center mt-5">
+<div v-click class="flex justify-center mt-4">
 
-```mermaid {theme: 'neutral', scale: 0.72}
+```mermaid {theme: 'neutral', scale: 0.68}
 flowchart LR
     P1["p1"]
     P2["p2"]
@@ -223,13 +233,9 @@ flowchart LR
 
 </div>
 
-<div v-click class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+<div v-click class="border-t border-gray-200 mt-4 pt-3 text-center font-medium">
 
-Un seul objet.
-
-<br>
-
-<code>p2 = p1</code> copie la <strong>référence</strong>, pas l'objet.
+Un seul objet : <code>p2 = p1</code> copie la <strong>référence</strong>, pas l'objet.
 
 </div>
 
@@ -241,7 +247,7 @@ layout: default
 
 <div class="mt-3 text-lg">
 
-Après :
+Après l'affectation suivante :
 
 </div>
 
@@ -250,9 +256,9 @@ Point p1 = new Point();
 Point p2 = p1;
 ```
 
-<div class="flex justify-center mt-5">
+<div class="flex justify-center mt-4">
 
-```mermaid {theme: 'neutral', scale: 0.72}
+```mermaid {theme: 'neutral', scale: 0.68}
 flowchart LR
     P1["p1"]
     P2["p2"]
@@ -264,13 +270,13 @@ flowchart LR
 
 </div>
 
-<div v-click class="mt-5 text-center text-lg">
+<div v-click class="mt-4 text-center text-lg">
 
 <code>p1</code> et <code>p2</code> permettent d'accéder au <strong>même objet</strong>.
 
 </div>
 
-<div v-click class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+<div v-click class="border-t border-gray-200 mt-4 pt-3 text-center font-medium">
 
 Deux variables
 <span class="text-gray-300 mx-3">≠</span>
@@ -284,38 +290,51 @@ layout: default
 
 # Une modification est partagée
 
+<div class="mt-3 text-lg">
+
+Que se passe-t-il si nous modifions l'objet via <code>p2</code> ?
+
+</div>
+
 ```java
 Point p1 = new Point();
 p1.initialiser(3, 5);
 
 Point p2 = p1;
-
 p2.deplacer(2, 1);
 ```
 
-<div class="mt-5 text-center font-medium text-lg">
+<div class="grid grid-cols-2 gap-8 mt-4 text-center">
 
-Que va afficher :
+<div>
 
+<div class="font-medium">
+Via <code>p2</code>
 </div>
 
-```java
-p1.afficher();
-```
-
-<div v-click class="mt-4 text-center text-2xl font-medium">
-
+<div class="text-xl mt-2">
 <code>(5, 6)</code>
+</div>
 
 </div>
 
-<div v-click class="mt-5 text-center text-gray-500">
+<div class="border-l border-gray-200 pl-8">
 
-<code>p1</code> et <code>p2</code> désignent le même objet.
+<div class="font-medium">
+Via <code>p1</code>
+</div>
 
-<br>
+<div class="text-xl mt-2">
+<code>(5, 6)</code>
+</div>
 
-La modification réalisée via <code>p2</code> est donc visible via <code>p1</code>.
+</div>
+
+</div>
+
+<div v-click class="border-t border-gray-200 mt-4 pt-3 text-center font-medium">
+
+<code>p1</code> et <code>p2</code> désignent le même objet : la modification est donc visible via les deux variables.
 
 </div>
 
@@ -338,9 +357,9 @@ Point p1 = new Point();
 Point p2 = p1;
 ```
 
-<div class="flex justify-center mt-4">
+<div class="flex justify-center mt-3">
 
-```mermaid {theme: 'neutral', scale: 0.62}
+```mermaid {theme: 'neutral', scale: 0.58}
 flowchart LR
     P1["p1"] --> O["Objet 1"]
     P2["p2"] --> O
@@ -361,9 +380,9 @@ Point p1 = new Point();
 Point p2 = new Point();
 ```
 
-<div class="flex justify-center mt-4">
+<div class="flex justify-center mt-3">
 
-```mermaid {theme: 'neutral', scale: 0.62}
+```mermaid {theme: 'neutral', scale: 0.58}
 flowchart LR
     P1["p1"] --> O1["Objet 1"]
     P2["p2"] --> O2["Objet 2"]
@@ -375,13 +394,10 @@ flowchart LR
 
 </div>
 
-<div v-click class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+<div v-click class="border-t border-gray-200 mt-4 pt-3 text-center font-medium">
 
-C'est <code>new</code> qui crée un nouvel objet.
-
-<br>
-
-Créer une nouvelle variable ne crée pas automatiquement un nouvel objet.
+C'est <code>new</code> qui crée un <strong>nouvel objet</strong>.  
+Créer une nouvelle variable ne crée pas automatiquement un objet.
 
 </div>
 
@@ -407,15 +423,15 @@ p2.initialiser(7, 4);
 p1 = p2;
 ```
 
-<div class="mt-5 text-center font-medium">
+<div class="mt-4 text-center font-medium">
 
 Après <code>p1 = p2</code>, quel objet <code>p1</code> désigne-t-il ?
 
 </div>
 
-<div v-click class="flex justify-center mt-5">
+<div v-click class="flex justify-center mt-4">
 
-```mermaid {theme: 'neutral', scale: 0.72}
+```mermaid {theme: 'neutral', scale: 0.68}
 flowchart LR
     P1["p1"] --> O2["Objet Point<br/>x = 7 · y = 4"]
     P2["p2"] --> O2
@@ -424,9 +440,9 @@ flowchart LR
 
 </div>
 
-<div v-click class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+<div v-click class="border-t border-gray-200 mt-4 pt-3 text-center font-medium">
 
-<code>p1</code> ne désigne plus l'objet <code>(2, 3)</code>.
+<code>p1</code> désigne maintenant le même objet que <code>p2</code>.
 
 </div>
 
@@ -438,13 +454,13 @@ layout: default
 
 <div class="mt-3 text-lg">
 
-Que devient l'objet <code>(2, 3)</code> ?
+Que devient alors l'ancien objet <code>(2, 3)</code> ?
 
 </div>
 
-<div class="flex justify-center mt-6">
+<div class="flex justify-center mt-5">
 
-```mermaid {theme: 'neutral', scale: 0.74}
+```mermaid {theme: 'neutral', scale: 0.70}
 flowchart LR
     P1["p1"] --> O2["Objet Point<br/>x = 7 · y = 4"]
     P2["p2"] --> O2
@@ -454,13 +470,13 @@ flowchart LR
 
 </div>
 
-<div v-click class="mt-6 text-center text-lg">
+<div v-click class="mt-5 text-center text-lg">
 
-Aucune variable accessible ne possède désormais de référence vers cet objet.
+Aucune référence accessible ne permet désormais d'atteindre cet objet.
 
 </div>
 
-<div v-click class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div v-click class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
 L'objet devient <strong>inaccessible</strong>.
 
@@ -478,7 +494,7 @@ Java gère automatiquement la mémoire occupée par les objets.
 
 </div>
 
-<div class="grid grid-cols-2 gap-8 mt-7">
+<div class="grid grid-cols-2 gap-8 mt-6">
 
 <div class="border border-gray-200 rounded-lg p-5 text-center">
 
@@ -486,7 +502,7 @@ Java gère automatiquement la mémoire occupée par les objets.
 Objet accessible
 </div>
 
-<div class="mt-3 text-gray-500">
+<div class="text-sm text-gray-500 mt-3">
 
 Il existe encore un chemin de références permettant de l'atteindre.
 
@@ -500,23 +516,23 @@ Il existe encore un chemin de références permettant de l'atteindre.
 Objet inaccessible
 </div>
 
-<div class="mt-3 text-gray-500">
+<div class="text-sm text-gray-500 mt-3">
 
-Il peut devenir éligible à la récupération de sa mémoire.
-
-</div>
+Sa mémoire pourra être récupérée automatiquement.
 
 </div>
 
 </div>
 
-<div v-click class="mt-7 text-center text-lg">
+</div>
 
-Le <strong>Garbage Collector</strong> peut récupérer automatiquement la mémoire des objets devenus inaccessibles.
+<div v-click class="mt-5 text-center text-lg">
+
+Le <strong>Garbage Collector</strong> peut récupérer la mémoire des objets devenus inaccessibles.
 
 </div>
 
-<div v-click class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div v-click class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
 Le programmeur ne choisit pas exactement <strong>quand</strong> cette récupération a lieu.
 
@@ -538,7 +554,7 @@ Une variable de type objet peut aussi ne désigner <strong>aucun objet</strong>.
 Point p = null;
 ```
 
-<div class="flex items-center justify-center gap-8 mt-7">
+<div class="flex items-center justify-center gap-10 mt-6">
 
 <div class="border border-gray-200 rounded-lg px-10 py-5 text-center">
 
@@ -570,7 +586,7 @@ aucun objet désigné
 
 </div>
 
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
 <code>null</code> indique l'<strong>absence de référence vers un objet</strong>.
 
@@ -582,37 +598,53 @@ layout: default
 
 # Que se passe-t-il avec `null` ?
 
+<div class="mt-3 text-lg">
+
+Observons l'appel suivant :
+
+</div>
+
 ```java
 Point p = null;
 
 p.deplacer(2, 1);
 ```
 
-<div class="mt-6 text-center text-lg">
+<div class="grid grid-cols-2 gap-8 mt-5 items-center">
 
-La variable <code>p</code> ne désigne aucun objet.
+<div class="text-center">
+
+<div class="font-medium">
+<code>p</code>
+</div>
+
+<div class="text-sm text-gray-500 mt-2">
+ne désigne aucun objet
+</div>
 
 </div>
 
-<div v-click class="mt-6 border border-gray-200 rounded-lg p-5 text-center">
+<div class="border-l border-gray-200 pl-8">
+
+<div class="border border-gray-200 rounded-lg p-4 text-center">
 
 <div class="font-medium text-lg">
-
 <code>NullPointerException</code>
-
 </div>
 
-<div class="text-sm text-gray-500 mt-3">
-
-Java ne trouve aucun objet sur lequel exécuter <code>deplacer()</code>.
-
+<div class="text-sm text-gray-500 mt-2">
+Aucun objet sur lequel exécuter <code>deplacer()</code>.
 </div>
 
 </div>
 
-<div v-click class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+</div>
 
-Avant d'appeler une méthode, la référence doit désigner un objet.
+</div>
+
+<div v-click class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+
+Pour appeler une méthode, la référence doit désigner un objet.
 
 </div>
 
@@ -632,7 +664,7 @@ Variable
 
 <div class="text-sm text-gray-500 mt-3">
 
-Stocke une référence pour les types objets.
+Stocke une référence pour un type objet.
 
 </div>
 
@@ -668,18 +700,15 @@ Possède son propre état et sa propre identité.
 
 </div>
 
-<div class="mt-6 text-center">
+<div class="mt-5 text-center text-gray-500">
 
-Plusieurs variables peuvent contenir une référence vers le <strong>même objet</strong>.
+Plusieurs variables peuvent désigner le <strong>même objet</strong>.
+
+</div>
+
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+
+Affecter une référence <strong>ne copie pas l'objet</strong> ; c'est <code>new</code> qui crée un nouvel objet.
 
 </div>
 
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
-
-Affecter une référence <strong>ne copie pas l'objet</strong>.
-
-<br>
-
-C'est <code>new</code> qui crée un nouvel objet.
-
-</div>

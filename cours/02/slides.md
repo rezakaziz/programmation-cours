@@ -62,9 +62,6 @@ src: ./pages/constructeur.md
 src: ./pages/static.md
 ---
 ---
-src: ./pages/packages.md
----
----
 layout: default
 ---
 
