@@ -341,51 +341,59 @@ layout: default
 
 <div class="mt-3 text-lg">
 
-Observons la déclaration suivante :
+Un attribut est déclaré avec un <strong>type</strong> et un <strong>nom</strong>.
 
 </div>
 
-<div class="flex justify-center mt-6">
+<div class="grid grid-cols-2 gap-8 mt-6">
 
-<div class="border border-gray-200 rounded-lg px-12 py-5 text-center text-xl">
+<div>
+
+### Type simple
+
+<div class="border border-gray-200 rounded-lg px-8 py-4 text-center text-xl mt-4">
 
 <code>int x;</code>
 
 </div>
 
-</div>
+<div class="text-sm text-gray-500 mt-3 text-center">
 
-<div class="grid grid-cols-2 gap-8 mt-7 text-center">
-
-<div class="border border-gray-200 rounded-lg p-4">
-
-<div class="font-medium">
-<code>int</code>
-</div>
-
-<div class="text-sm text-gray-500 mt-2">
-Type de l'information.
-</div>
-
-</div>
-
-<div class="border border-gray-200 rounded-lg p-4">
-
-<div class="font-medium">
-<code>x</code>
-</div>
-
-<div class="text-sm text-gray-500 mt-2">
-Nom de l'attribut.
-</div>
+L'attribut peut représenter une valeur simple.
 
 </div>
 
 </div>
 
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div class="border-l border-gray-200 pl-8">
 
-Le type indique quelles valeurs pourront être représentées par l'attribut.
+### Type objet
+
+<div class="border border-gray-200 rounded-lg px-8 py-4 text-center text-xl mt-4">
+
+<code>Point abs;</code>
+
+</div>
+
+<div class="text-sm text-gray-500 mt-3 text-center">
+
+Le type d'un attribut peut aussi être une classe.
+
+</div>
+
+</div>
+
+</div>
+
+<div class="mt-6 text-center">
+
+Le type détermine la nature de l'information représentée par l'attribut.
+
+</div>
+
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+
+Un objet peut donc posséder d'autres objets parmi ses attributs.
 
 </div>
 
@@ -440,7 +448,7 @@ void deplacer(int dx, int dy) {
 }
 ```
 
-<div class="grid grid-cols-3 gap-4 mt-6 text-center">
+<div class="grid grid-cols-3 gap-4 mt-5 text-center">
 
 <div class="border border-gray-200 rounded-lg p-4">
 
@@ -480,9 +488,39 @@ Paramètres
 
 </div>
 
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div class="mt-5 text-center text-gray-500">
 
-Les paramètres représentent les informations nécessaires à l'exécution de la méthode.
+Les types utilisés peuvent être des <strong>types primitifs</strong> ou des <strong>classes</strong>.
+
+</div>
+
+<div class="grid grid-cols-2 gap-6 mt-4 text-center">
+
+<div>
+
+<code>void comparer(Point autre)</code>
+
+<div class="text-sm text-gray-500 mt-1">
+Un objet peut être passé en paramètre.
+</div>
+
+</div>
+
+<div class="border-l border-gray-200 pl-6">
+
+<code>Point obtenirPoint()</code>
+
+<div class="text-sm text-gray-500 mt-1">
+Un objet peut être retourné.
+</div>
+
+</div>
+
+</div>
+
+<div class="border-t border-gray-200 mt-4 pt-3 text-center font-medium">
+
+Une méthode peut donc recevoir et retourner des objets.
 
 </div>
 
