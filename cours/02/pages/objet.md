@@ -518,6 +518,132 @@ Un objet possède une <strong>identité</strong>, un <strong>état</strong> et u
 layout: default
 ---
 
+# Où écrire notre programme ?
+
+<div class="mt-3 text-lg">
+
+Nous savons maintenant ce qu'est un objet.
+
+Mais où écrire les instructions qui permettent de créer et d'utiliser ces objets ?
+
+</div>
+
+<div class="grid grid-cols-2 gap-8 mt-6 items-center">
+
+<div>
+
+```java
+class Point {
+    int x;
+    int y;
+
+    void afficher() {
+        // ...
+    }
+}
+```
+
+</div>
+
+<div class="text-center">
+
+<div class="border border-gray-200 rounded-lg p-5">
+
+<div class="font-medium">
+
+La classe <code>Point</code>
+
+</div>
+
+<div class="text-sm text-gray-500 mt-3">
+
+définit le modèle des objets que nous voulons manipuler.
+
+</div>
+
+</div>
+
+<div class="text-3xl text-gray-300 my-3">
+
+↓
+
+</div>
+
+<div class="font-medium">
+
+Il nous faut maintenant un point de départ pour le programme.
+
+</div>
+
+</div>
+
+</div>
+
+<div v-click class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+
+En Java, nous allons utiliser une méthode particulière : <code>main</code>.
+
+</div>
+---
+layout: default
+---
+
+# La méthode `main`
+
+<div class="mt-3 text-lg">
+
+La méthode <code>main</code> constitue le point de départ de l'exécution de notre programme.
+
+</div>
+
+<div class="grid grid-cols-2 gap-8 mt-5 items-center">
+
+<div>
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+
+        System.out.println("Bonjour");
+
+    }
+}
+```
+
+</div>
+
+<div class="space-y-4">
+
+<div class="border border-gray-200 rounded-lg p-4 text-center">
+
+### `Main`
+
+Une classe qui contient le point de départ du programme.
+
+</div>
+
+<div class="border border-gray-200 rounded-lg p-4 text-center">
+
+### `main`
+
+Les instructions du programme peuvent être écrites ici.
+
+</div>
+
+</div>
+
+</div>
+
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+
+Pour l'instant, retenons simplement que l'exécution commence dans <code>main</code>.
+
+</div>
+---
+layout: default
+---
+
 # Créons maintenant un objet en Java
 
 <div class="mt-3 text-lg">
