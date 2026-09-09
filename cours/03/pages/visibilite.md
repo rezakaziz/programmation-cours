@@ -99,30 +99,88 @@ layout: default
 
 <div class="mt-3 text-lg">
 
-La visibilité <em>package-private</em> dépend de l'emplacement de la classe qui utilise le membre.
+Un membre <em>package-private</em> est accessible uniquement depuis les classes du <strong>même package</strong>.
 
 </div>
 
-<div class="flex justify-center mt-6">
+<div class="grid grid-cols-2 gap-8 mt-5">
 
-```mermaid {theme: 'neutral', scale: 0.66}
+<div>
+
+### Même package
+
+<div class="flex justify-center mt-3">
+
+```mermaid {theme: 'neutral', scale: 0.60}
 flowchart LR
+
     subgraph G["package geometrie"]
-        P["Point<br/>int x"]
+        direction LR
+
         T["TestPoint"]
+        P["Point<br/>x"]
+
+        T -->|"✓ accès à x"| P
     end
-
-    A["package application<br/>Main"]
-
-    T -->|"✓ accès"| P
-    A -.->|"✗ accès"| P
 ```
 
 </div>
 
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div class="text-center mt-3">
 
-Le package constitue une frontière d'accès.
+<code>TestPoint</code> peut accéder à <code>x</code>.
+
+</div>
+
+<div class="text-sm text-gray-500 text-center mt-2">
+
+Les deux classes appartiennent à <code>geometrie</code>.
+
+</div>
+
+</div>
+
+<div class="border-l border-gray-200 pl-8">
+
+### Packages différents
+
+<div class="flex justify-center mt-3">
+
+```mermaid {theme: 'neutral', scale: 0.60}
+flowchart LR
+
+    subgraph A["package application"]
+        M["Main"]
+    end
+
+    subgraph G["package geometrie"]
+        P["Point<br/>x"]
+    end
+
+    M -.->|"✗ accès à x"| P
+```
+
+</div>
+
+<div class="text-center mt-3">
+
+<code>Main</code> ne peut pas accéder à <code>x</code>.
+
+</div>
+
+<div class="text-sm text-gray-500 text-center mt-2">
+
+Les classes appartiennent à des packages différents.
+
+</div>
+
+</div>
+
+</div>
+
+<div v-click class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+
+La frontière du package détermine l'accès aux membres <em>package-private</em>.
 
 </div>
 

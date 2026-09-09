@@ -4,7 +4,17 @@ layout: default
 
 # Classes d'un autre package
 
-Notre projet contient maintenant deux packages.
+<div class="mt-3 text-lg">
+
+Notre projet contient maintenant deux packages distincts.
+
+</div>
+
+<div class="grid grid-cols-2 gap-8 mt-5 items-center">
+
+<div>
+
+### Organisation du projet
 
 ```text
 projet/
@@ -15,17 +25,49 @@ projet/
     └── Main.java
 ```
 
-<div class="mt-7 text-center">
+<div class="text-sm text-gray-500 mt-3">
 
-`Point` appartient à `geometrie`.
-
-`Main` appartient à `application`.
+Chaque classe est placée dans le dossier correspondant à son package.
 
 </div>
 
-<div v-click class="border-t border-gray-200 mt-7 pt-4 text-center font-medium">
+</div>
 
-Comment utiliser `Point` depuis `Main` ?
+<div class="border-l border-gray-200 pl-8">
+
+### Organisation des classes
+
+<div class="flex justify-center mt-3">
+
+```mermaid {theme: 'neutral', scale: 0.62}
+flowchart LR
+
+    subgraph A["application"]
+        M["Main"]
+    end
+
+    subgraph G["geometrie"]
+        P["Point"]
+    end
+
+    M -. "utiliser ?" .-> P
+```
+
+</div>
+
+<div class="text-sm text-gray-500 text-center mt-3">
+
+<code>Main</code> et <code>Point</code> appartiennent à des packages différents.
+
+</div>
+
+</div>
+
+</div>
+
+<div v-click class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+
+Comment <code>Main</code> peut-il utiliser la classe <code>Point</code> ?
 
 </div>
 

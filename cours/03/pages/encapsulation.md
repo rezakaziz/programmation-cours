@@ -94,7 +94,67 @@ Le code extérieur accède directement aux coordonnées.
 Nous voulons que l'objet garde le contrôle de son état.
 
 </div>
+---
+layout: default
+---
 
+# Un accès direct à l'état
+
+<div class="mt-3 text-lg">
+
+Pour l'instant, le code extérieur peut accéder directement aux attributs d'un objet.
+
+</div>
+
+<div class="flex justify-center mt-6">
+
+```mermaid {theme: 'neutral', scale: 0.72}
+flowchart LR
+    E["Code extérieur"] --> X["x"]
+    E --> Y["y"]
+
+    subgraph P["Objet Point"]
+        X
+        Y
+        D["deplacer()"]
+    end
+```
+
+</div>
+
+<div class="grid grid-cols-2 gap-8 mt-5 text-center">
+
+<div>
+
+<code>p.x = 100;</code>
+
+<div class="text-sm text-gray-500 mt-2">
+
+L'attribut est modifié directement.
+
+</div>
+
+</div>
+
+<div class="border-l border-gray-200 pl-8">
+
+<code>p.y = -50;</code>
+
+<div class="text-sm text-gray-500 mt-2">
+
+La classe ne contrôle pas la modification.
+
+</div>
+
+</div>
+
+</div>
+
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+
+Le code extérieur peut modifier directement l'état de l'objet.
+
+</div>
 ---
 layout: default
 ---
@@ -159,32 +219,73 @@ layout: default
 
 <div class="mt-3 text-lg">
 
-L'**encapsulation** consiste à contrôler l'accès à l'état interne d'un objet.
+L'<strong>encapsulation</strong> consiste à contrôler l'accès à l'état interne d'un objet.
 
 </div>
 
-<div class="flex justify-center mt-6">
+<div class="flex justify-center mt-5">
 
 ```mermaid {theme: 'neutral', scale: 0.68}
 flowchart LR
-    E["Code extérieur"]
-    M["Opérations<br/>accessibles"]
-    A["État interne<br/>x · y"]
 
-    E --> M --> A
+    E["Code extérieur"]
+
+    subgraph P["Objet Point"]
+        direction TB
+        M["Opérations accessibles<br/>getX() · getY() · deplacer()"]
+        A["État interne<br/>x · y"]
+
+        M --> A
+    end
+
+    E -->|"utilise"| M
 ```
 
 </div>
 
-<div class="mt-5 text-center">
+<div class="grid grid-cols-2 gap-8 mt-4 text-center">
 
-Le code extérieur utilise les opérations proposées par <code>Point</code>.
+<div>
+
+<div class="font-medium">
+État interne
+</div>
+
+<div class="mt-2">
+<code>x</code> · <code>y</code>
+</div>
+
+<div class="text-sm text-gray-500 mt-2">
+
+Les informations restent sous le contrôle de l'objet.
 
 </div>
 
-<div v-click class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+</div>
 
-Les coordonnées restent sous le contrôle de la classe.
+<div class="border-l border-gray-200 pl-8">
+
+<div class="font-medium">
+Opérations accessibles
+</div>
+
+<div class="mt-2">
+<code>getX()</code> · <code>getY()</code> · <code>deplacer()</code>
+</div>
+
+<div class="text-sm text-gray-500 mt-2">
+
+Elles définissent comment le code extérieur peut interagir avec l'objet.
+
+</div>
+
+</div>
+
+</div>
+
+<div v-click class="border-t border-gray-200 mt-4 pt-3 text-center font-medium">
+
+Le code extérieur utilise les opérations proposées sans accéder directement à l'état interne.
 
 </div>
 
@@ -520,7 +621,7 @@ layout: default
 
 <div class="mt-3 text-lg">
 
-Les méthodes <code>public</code> définissent ce que le code extérieur peut utiliser.
+L'<strong>interface publique</strong> regroupe les opérations que le code extérieur peut utiliser.
 
 </div>
 
@@ -530,26 +631,41 @@ Les méthodes <code>public</code> définissent ce que le code extérieur peut ut
 
 ```mermaid {theme: 'neutral', scale: 0.62}
 flowchart LR
+
     E["Code extérieur"]
 
-    subgraph P["Point"]
-        M["deplacer()"]
-        A["x · y"]
+    subgraph P["Objet Point"]
+        direction TB
+
+        subgraph I["Interface publique"]
+            M["deplacer()"]
+        end
+
+        subgraph IM["Implémentation interne"]
+            A["x · y"]
+        end
+
         M --> A
     end
 
-    E --> M
+    E -->|"utilise"| M
 ```
 
 </div>
 
-<div class="space-y-4 text-center">
+<div class="space-y-4">
 
 <div class="border border-gray-200 rounded-lg p-4">
 
 ### Interface publique
 
 <code>deplacer()</code>
+
+<div class="text-sm text-gray-500 mt-2">
+
+Ce que le code extérieur peut demander à l'objet.
+
+</div>
 
 </div>
 
@@ -559,15 +675,21 @@ flowchart LR
 
 <code>x</code> · <code>y</code>
 
-</div>
+<div class="text-sm text-gray-500 mt-2">
+
+Les informations utilisées par l'objet pour réaliser ses opérations.
 
 </div>
 
 </div>
 
-<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+</div>
 
-L'utilisation de l'objet est séparée de son fonctionnement interne.
+</div>
+
+<div v-click class="border-t border-gray-200 mt-4 pt-3 text-center font-medium">
+
+Le code extérieur connaît <strong>ce qu'il peut demander</strong>, sans avoir besoin de connaître <strong>comment l'objet le réalise</strong>.
 
 </div>
 

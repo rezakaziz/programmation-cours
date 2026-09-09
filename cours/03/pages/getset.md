@@ -271,7 +271,7 @@ layout: default
 
 <div class="mt-3 text-lg">
 
-Passer par une méthode permet d'ajouter des règles.
+Passer par une méthode permet à l'objet de <strong>vérifier une règle avant de modifier son état</strong>.
 
 </div>
 
@@ -281,44 +281,77 @@ Passer par une méthode permet d'ajouter des règles.
 
 ```java
 public void setX(int x) {
-    if (x > = 0) {
+    if (x >= 0) {
         this.x = x;
     }
 }
 ```
+
 <div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
-La classe garde le contrôle de son état.
-
-</div>
-</div>
-
-<div class="space-y-4 text-center">
-
-<div class="border border-gray-200 rounded-lg p-4">
-
-### `setX(8)`
-
-✓ Accepté
-
-<code>x = 8</code>
-
-</div>
-
-<div class="border border-gray-200 rounded-lg p-4">
-
-### `setX(-4)`
-
-✗ Refusé
-
-<code>x</code> reste inchangé
+La modification passe par <code>setX()</code>.
 
 </div>
 
 </div>
 
+<div class="flex justify-center border-l border-gray-200 pl-8">
+
+```mermaid {theme: 'neutral', scale: 0.60}
+flowchart TB
+
+    D["setX(x)"]
+
+    subgraph P["Objet Point"]
+        direction TB
+        V{"x ≥ 0 ?"}
+        A["Modifier l'état<br/>this.x = x"]
+        R["État inchangé"]
+
+        V -->|"oui"| A
+        V -->|"non"| R
+    end
+
+    D --> V
+```
+
 </div>
 
+</div>
+
+<div class="grid grid-cols-2 gap-8 mt-4 text-center">
+
+<div>
+
+<code>setX(8)</code> → <strong>accepté</strong>
+
+<div class="text-sm text-gray-500 mt-2">
+
+La règle est respectée : <code>x</code> devient <code>8</code>.
+
+</div>
+
+</div>
+
+<div class="border-l border-gray-200 pl-8">
+
+<code>setX(-4)</code> → <strong>refusé</strong>
+
+<div class="text-sm text-gray-500 mt-2">
+
+La règle n'est pas respectée : <code>x</code> reste inchangé.
+
+</div>
+
+</div>
+
+</div>
+
+<div v-click class="border-t border-gray-200 mt-4 pt-3 text-center font-medium">
+
+L'objet ne se contente pas de cacher son état : il <strong>contrôle les modifications autorisées</strong>.
+
+</div>
 
 
 ---

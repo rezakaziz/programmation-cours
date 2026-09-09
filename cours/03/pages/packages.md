@@ -114,17 +114,28 @@ Les classes d'un programme n'ont pas toutes le même rôle.
 
 </div>
 
-<div class="grid grid-cols-2 gap-8 mt-6">
+<div class="grid grid-cols-2 gap-8 mt-5">
 
-<div class="border border-gray-200 rounded-lg p-5">
+<div>
 
 ### Géométrie
 
-- `Point`
-- `Cercle`
-- `Rectangle`
+<div class="flex justify-center mt-3">
 
-<div class="text-sm text-gray-500 mt-3">
+```mermaid {theme: 'neutral', scale: 0.62}
+flowchart TB
+
+    subgraph G["Géométrie"]
+        direction LR
+        P["Point"]
+        C["Cercle"]
+        R["Rectangle"]
+    end
+```
+
+</div>
+
+<div class="text-sm text-gray-500 text-center mt-3">
 
 Classes représentant des objets géométriques.
 
@@ -132,15 +143,26 @@ Classes représentant des objets géométriques.
 
 </div>
 
-<div class="border border-gray-200 rounded-lg p-5">
+<div class="border-l border-gray-200 pl-8">
 
 ### Application
 
-- `Main`
-- `Menu`
-- `Configuration`
+<div class="flex justify-center mt-3">
 
-<div class="text-sm text-gray-500 mt-3">
+```mermaid {theme: 'neutral', scale: 0.62}
+flowchart TB
+
+    subgraph A["Application"]
+        direction LR
+        M["Main"]
+        ME["Menu"]
+        CO["Configuration"]
+    end
+```
+
+</div>
+
+<div class="text-sm text-gray-500 text-center mt-3">
 
 Classes liées au fonctionnement de l'application.
 
@@ -150,9 +172,15 @@ Classes liées au fonctionnement de l'application.
 
 </div>
 
+<div class="mt-5 text-center">
+
+Les classes ayant un rôle proche peuvent être <strong>regroupées dans un même ensemble</strong>.
+
+</div>
+
 <div v-click class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
-Java fournit les <strong>packages</strong> pour réaliser cette organisation.
+En Java, ces regroupements sont réalisés à l'aide de <strong>packages</strong>.
 
 </div>
 

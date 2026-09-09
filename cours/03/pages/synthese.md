@@ -143,40 +143,81 @@ L'opération est `public`.
 `Main` connaît la classe grâce à l'`import`, mais accède uniquement à son interface publique.
 
 </div>
+
 ---
 layout: default
 ---
 
-# À retenir : encapsulation et packages
+# A retenir : Bonnes pratiques
 
-<div class="grid grid-cols-2 gap-8 mt-6">
+<div class="mt-3 text-lg">
 
-<div class="border border-gray-200 rounded-lg p-5">
-
-### 🔒 Concevoir une classe
-
-- protéger son état interne
-- définir une interface publique
-- contrôler l'accès aux données
-- exposer des opérations adaptées
+Quelques règles simples pour concevoir des classes bien encapsulées et organiser son programme.
 
 </div>
 
-<div class="border border-gray-200 rounded-lg p-5">
+<div class="grid grid-cols-4 gap-4 mt-6">
 
-### 📦 Organiser les classes
+<div class="border border-gray-200 rounded-lg p-4">
 
-- regrouper les classes en packages
-- utiliser `import` lorsque nécessaire
-- distinguer nom simple et nom complet
-- maîtriser les règles de visibilité
+### 🔒 Attributs
+
+<strong>Tous les attributs doivent être <code>private</code>.</strong>
+
+<div class="text-sm text-gray-500 mt-2">
+
+L'état reste sous le contrôle de l'objet.
 
 </div>
 
 </div>
 
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div class="border border-gray-200 rounded-lg p-4">
 
-Une classe contrôle <strong>ce qu'elle expose</strong> ; les packages structurent <strong>où elle se situe et comment elle est utilisée</strong>.
+### 🎯 Méthodes
+
+Rendre <code>public</code> uniquement les méthodes nécessaires.
+
+<div class="text-sm text-gray-500 mt-2">
+
+Limiter l'interface exposée.
+
+</div>
+
+</div>
+
+<div class="border border-gray-200 rounded-lg p-4">
+
+### 🔧 Getters / setters
+
+Ne pas les créer systématiquement pour chaque attribut.
+
+<div class="text-sm text-gray-500 mt-2">
+
+Les ajouter seulement si nécessaire.
+
+</div>
+
+</div>
+
+<div class="border border-gray-200 rounded-lg p-4">
+
+### 📦 Packages
+
+Regrouper les classes ayant des responsabilités proches.
+
+<div class="text-sm text-gray-500 mt-2">
+
+Garder une organisation cohérente.
+
+</div>
+
+</div>
+
+</div>
+
+<div v-click class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+
+<strong>Protéger l'état · Limiter l'interface · Organiser les responsabilités</strong>
 
 </div>
