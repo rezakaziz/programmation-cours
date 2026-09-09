@@ -2,132 +2,21 @@
 layout: default
 ---
 
-# L'encapsulation
+# Le getter
 
 <div class="mt-3 text-lg">
 
-Les modificateurs d'accès permettent de mettre en œuvre un principe important de la programmation orientée objet : <strong>l'encapsulation</strong>.
+Un <strong>getter</strong> permet de consulter une information.
 
 </div>
 
-<div class="grid grid-cols-2 gap-8 mt-8">
+<div class="grid grid-cols-2 gap-8 mt-5 items-center">
 
-<div class="border border-gray-200 rounded-lg p-5 text-center">
-
-<div class="text-xl font-medium">
-🔒 Cacher les données
-</div>
-
-<div class="mt-4">
-
-Les attributs sont généralement déclarés <code>private</code>.
-
-</div>
-
-<div class="mt-4 text-gray-500">
-
-On évite ainsi qu'ils soient modifiés directement depuis l'extérieur de la classe.
-
-</div>
-
-</div>
-
-<div class="border border-gray-200 rounded-lg p-5 text-center">
-
-<div class="text-xl font-medium">
-🚪 Contrôler l'accès
-</div>
-
-<div class="mt-4">
-
-Des méthodes <code>public</code> permettent d'interagir avec l'objet.
-
-</div>
-
-<div class="mt-4 text-gray-500">
-
-La classe contrôle ainsi la manière dont ses données sont utilisées ou modifiées.
-
-</div>
-
-</div>
-
-</div>
-
-<div class="mt-7 text-center text-lg">
-
-<strong>L'encapsulation</strong> consiste à <strong>cacher l'état interne</strong> d'un objet
-et à <strong>contrôler l'accès</strong> à cet état.
-
-</div>
-
-<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
-
-💡 L'objet ne laisse pas les autres classes manipuler librement ses données internes.
-
-</div>
----
-layout: default
----
-
-# Accéder aux attributs privés
-
-<div class="mt-3 text-lg">
-
-Nous avons choisi de protéger les attributs avec <code>private</code>.
-
-</div>
+<div>
 
 ```java
 class Point {
-
     private int x;
-    private int y;
-
-}
-```
-
-<div class="mt-5 text-center">
-
-Depuis l'extérieur de la classe :
-
-</div>
-
-```java
-Point p = new Point();
-
-p.x = 5;
-```
-
-<div v-click class="mt-5 text-center text-xl font-medium">
-
-✗ Impossible
-
-</div>
-
-<div v-click class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
-
-Un attribut <code>private</code> n'est pas directement accessible depuis l'extérieur de sa classe.
-
-</div>
-
----
-layout: default
----
-
-# Mais comment connaître sa valeur ?
-
-<div class="mt-3 text-lg">
-
-Même si un attribut est privé, nous pouvons vouloir permettre sa <strong>lecture</strong>.
-
-</div>
-
-```java
-class Point {
-
-    private int x;
-    private int y;
 
     public int getX() {
         return x;
@@ -135,19 +24,29 @@ class Point {
 }
 ```
 
-<div v-click class="mt-5 text-center">
-
-Nous pouvons maintenant écrire :
-
 </div>
 
+<div>
+
 ```java
+Point p = new Point(3, 5);
+
 int valeur = p.getX();
 ```
 
-<div v-click class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+<div class="border border-gray-200 rounded-lg p-4 text-center mt-4">
 
-Une méthode permettant de <strong>lire</strong> la valeur d'un attribut est appelée un <strong>getter</strong>.
+<code>valeur = 3</code>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+
+Le getter fournit un accès en lecture sans exposer directement l'attribut.
 
 </div>
 
@@ -155,17 +54,14 @@ Une méthode permettant de <strong>lire</strong> la valeur d'un attribut est app
 layout: default
 ---
 
-# Les getters
+# Getters de `Point`
 
-<div class="mt-3 text-lg">
+<div class="grid grid-cols-2 gap-8 mt-5 items-center">
 
-Un <strong>getter</strong> permet de consulter la valeur d'un attribut privé.
-
-</div>
+<div>
 
 ```java
 class Point {
-
     private int x;
     private int y;
 
@@ -179,14 +75,18 @@ class Point {
 }
 ```
 
-<div class="grid grid-cols-2 gap-8 mt-5 text-center">
+</div>
+
+<div class="space-y-4 text-center">
 
 <div class="border border-gray-200 rounded-lg p-4">
 
 <code>p.getX()</code>
 
 <div class="text-sm text-gray-500 mt-2">
-retourne la valeur de <code>x</code>
+
+Consulte <code>x</code>
+
 </div>
 
 </div>
@@ -196,104 +96,11 @@ retourne la valeur de <code>x</code>
 <code>p.getY()</code>
 
 <div class="text-sm text-gray-500 mt-2">
-retourne la valeur de <code>y</code>
-</div>
+
+Consulte <code>y</code>
 
 </div>
 
-</div>
-
-<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
-
-Le getter donne un <strong>accès contrôlé en lecture</strong> à l'état de l'objet.
-
-</div>
-
----
-layout: default
----
-
-# Et pour modifier un attribut ?
-
-<div class="mt-3 text-lg">
-
-Nous pouvons également autoriser la modification d'un attribut à travers une méthode.
-
-</div>
-
-```java
-class Point {
-
-    private int x;
-
-    public void setX(int nouvelleValeur) {
-        x = nouvelleValeur;
-    }
-}
-```
-
-<div v-click class="mt-5 text-center">
-
-Depuis l'extérieur :
-
-</div>
-
-```java
-p.setX(5);
-```
-
-<div v-click class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
-
-Une méthode permettant de <strong>modifier</strong> un attribut est appelée un <strong>setter</strong>.
-
-</div>
-
----
-layout: default
----
-
-# Les setters
-
-<div class="mt-3 text-lg">
-
-Un <strong>setter</strong> permet de modifier un attribut privé de manière contrôlée.
-
-</div>
-
-```java
-class Point {
-
-    private int x;
-    private int y;
-
-    public void setX(int nouvelleValeur) {
-        x = nouvelleValeur;
-    }
-
-    public void setY(int nouvelleValeur) {
-        y = nouvelleValeur;
-    }
-}
-```
-
-<div class="grid grid-cols-2 gap-8 mt-5 text-center">
-
-<div class="border border-gray-200 rounded-lg p-4">
-
-<code>p.setX(3)</code>
-
-<div class="text-sm text-gray-500 mt-2">
-modifie <code>x</code>
-</div>
-
-</div>
-
-<div class="border border-gray-200 rounded-lg p-4">
-
-<code>p.setY(5)</code>
-
-<div class="text-sm text-gray-500 mt-2">
-modifie <code>y</code>
 </div>
 
 </div>
@@ -302,7 +109,7 @@ modifie <code>y</code>
 
 <div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
 
-Le setter donne un <strong>accès contrôlé en modification</strong> à l'état de l'objet.
+Les coordonnées restent privées mais peuvent être consultées.
 
 </div>
 
@@ -310,40 +117,45 @@ Le setter donne un <strong>accès contrôlé en modification</strong> à l'état
 layout: default
 ---
 
-# Pourquoi passer par un setter ?
+# Modifier un attribut privé
 
 <div class="mt-3 text-lg">
 
-L'intérêt n'est pas seulement de modifier un attribut privé.
-
-Le setter peut aussi <strong>contrôler la nouvelle valeur</strong>.
+L'affectation directe reste interdite.
 
 </div>
 
+<div class="grid grid-cols-2 gap-8 mt-6 text-center">
+
+<div class="border border-gray-200 rounded-lg p-4">
+
+### Accès direct
+
 ```java
-class Rectangle {
-
-    private int largeur;
-
-    public void setLargeur(int nouvelleLargeur) {
-
-        if (nouvelleLargeur > 0) {
-            largeur = nouvelleLargeur;
-        }
-
-    }
-}
+p.x = 8;
 ```
 
-<div v-click class="mt-5 text-center">
+✗ Interdit
 
-Une largeur négative ou nulle n'est pas acceptée.
+</div>
+
+<div v-click class="border border-gray-200 rounded-lg p-4">
+
+### Accès contrôlé
+
+```java
+p.setX(8);
+```
+
+✓ Via une méthode
+
+</div>
 
 </div>
 
 <div v-click class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
 
-L'encapsulation permet de <strong>protéger la cohérence de l'état</strong> de l'objet.
+Cette méthode est appelée un <strong>mutateur</strong>, ou <strong>setter</strong>.
 
 </div>
 
@@ -351,25 +163,65 @@ L'encapsulation permet de <strong>protéger la cohérence de l'état</strong> de
 layout: default
 ---
 
-# Faut-il toujours créer un setter ?
+# Le setter
 
 <div class="mt-3 text-lg">
 
-Non.
-
-Un attribut privé ne doit pas nécessairement être modifiable depuis l'extérieur.
+Un <strong>setter</strong> permet de modifier un attribut privé.
 
 </div>
 
-<div class="grid grid-cols-2 gap-8 mt-7 text-center">
+<div class="grid grid-cols-2 gap-8 mt-5 items-center">
 
-<div class="border border-gray-200 rounded-lg p-5">
+<div>
 
-<div class="font-medium text-lg">
-Getter seulement
+```java
+class Point {
+    private int x;
+
+    public void setX(int x) {
+        this.x = x;
+    }
+}
+```
+
 </div>
 
-<div class="mt-3">
+<div>
+
+```java
+Point p = new Point(3, 5);
+
+p.setX(8);
+```
+
+<div class="border border-gray-200 rounded-lg p-4 text-center mt-4">
+
+<code>x = 8</code>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+
+Le setter fournit un accès en modification.
+
+</div>
+
+---
+layout: default
+---
+
+# Accesseurs et mutateurs
+
+<div class="grid grid-cols-2 gap-8 mt-6">
+
+<div class="border border-gray-200 rounded-lg p-4">
+
+### Accesseur — Getter
 
 ```java
 public int getX() {
@@ -377,79 +229,28 @@ public int getX() {
 }
 ```
 
-</div>
+<div class="text-center mt-3">
 
-<div class="text-sm text-gray-500 mt-3">
-Lecture autorisée
-</div>
-
-</div>
-
-<div class="border border-gray-200 rounded-lg p-5">
-
-<div class="font-medium text-lg">
-Getter + Setter
-</div>
-
-<div class="mt-3 text-sm text-gray-500">
-
-Lecture et modification autorisées
+<strong>Consulter</strong> une information.
 
 </div>
 
 </div>
 
-</div>
+<div class="border border-gray-200 rounded-lg p-4">
 
-<div v-click class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+### Mutateur — Setter
 
-On expose uniquement les opérations dont les utilisateurs de la classe ont <strong>réellement besoin</strong>.
-
-</div>
-
----
-layout: default
----
-
-# Getter, setter et encapsulation
-
-<div class="flex justify-center mt-7">
-
-```mermaid {theme: 'neutral', scale: 0.72}
-flowchart LR
-    E["Code extérieur"]
-    G["Getter<br/>lecture"]
-    S["Setter<br/>modification"]
-    A["Attribut privé"]
-
-    E --> G --> A
-    E --> S --> A
+```java
+public void setX(int x) {
+    this.x = x;
+}
 ```
 
-</div>
+<div class="text-center mt-3">
 
-<div class="grid grid-cols-2 gap-8 mt-7 text-center">
+<strong>Modifier</strong> une information.
 
-<div>
-
-<div class="font-medium">
-Getter
-</div>
-
-<div class="text-sm text-gray-500 mt-2">
-Contrôle l'accès en lecture.
-</div>
-
-</div>
-
-<div class="border-l border-gray-200 pl-8">
-
-<div class="font-medium">
-Setter
-</div>
-
-<div class="text-sm text-gray-500 mt-2">
-Contrôle l'accès en modification.
 </div>
 
 </div>
@@ -458,10 +259,367 @@ Contrôle l'accès en modification.
 
 <div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
 
-<code>private</code> ne signifie pas « inaccessible » :
+La classe choisit les accès qu'elle souhaite fournir.
+
+</div>
+
+---
+layout: default
+---
+
+# Contrôler une modification
+
+<div class="mt-3 text-lg">
+
+Passer par une méthode permet d'ajouter des règles.
+
+</div>
+
+<div class="grid grid-cols-2 gap-8 mt-5 items-center">
+
+<div>
+
+```java
+public void setX(int x) {
+    if (x > = 0) {
+        this.x = x;
+    }
+}
+```
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+
+La classe garde le contrôle de son état.
+
+</div>
+</div>
+
+<div class="space-y-4 text-center">
+
+<div class="border border-gray-200 rounded-lg p-4">
+
+### `setX(8)`
+
+✓ Accepté
+
+<code>x = 8</code>
+
+</div>
+
+<div class="border border-gray-200 rounded-lg p-4">
+
+### `setX(-4)`
+
+✗ Refusé
+
+<code>x</code> reste inchangé
+
+</div>
+
+</div>
+
+</div>
+
+
+
+---
+layout: default
+---
+
+# Faut-il toujours un setter ?
+
+<div class="mt-3 text-lg">
+
+Un attribut <code>private</code> n'a pas forcément besoin d'un setter.
+
+</div>
+
+<div class="grid grid-cols-2 gap-8 mt-6 text-center">
+
+<div class="border border-gray-200 rounded-lg p-4">
+
+### Modifier directement
+
+```java
+p.setX(8);
+p.setY(6);
+```
+
+Le code choisit les nouvelles coordonnées.
+
+</div>
+
+<div class="border border-gray-200 rounded-lg p-4">
+
+### Demander une opération
+
+```java
+p.deplacer(5, 1);
+```
+
+Le point contrôle son déplacement.
+
+</div>
+
+</div>
+
+<div v-click class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+
+Encapsuler ne signifie pas ajouter systématiquement un setter à chaque attribut.
+
+</div>
+
+---
+layout: default
+---
+
+# Une interface adaptée
+
+<div class="grid grid-cols-2 gap-8 mt-5 items-center">
+
+<div>
+
+```java
+class Point {
+    private int x;
+    private int y;
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void deplacer(int dx, int dy) {
+        x += dx;
+        y += dy;
+    }
+}
+```
+
+</div>
+
+<div class="space-y-4 text-center">
+
+<div class="border border-gray-200 rounded-lg p-4">
+
+### Consulter
+
+<code>getX()</code>
+
+<code>getY()</code>
+
+</div>
+
+<div class="border border-gray-200 rounded-lg p-4">
+
+### Modifier
+
+<code>deplacer()</code>
+
+</div>
+
+<div class="text-sm text-gray-500">
+
+La classe expose uniquement les opérations utiles.
+
+</div>
+
+</div>
+
+</div>
+
+<div class="border-t border-gray-200 mt-5 pt-4 text-center font-medium">
+
+L'interface publique décrit ce que l'objet permet de faire.
+
+</div>
+
+---
+layout: default
+---
+
+# À retenir : encapsulation
+
+<div class="grid grid-cols-2 gap-6 mt-7">
+
+<div class="border border-gray-200 rounded-lg p-4">
+
+### 🔒 `private`
+
+Protège l'état interne.
+
+</div>
+
+<div class="border border-gray-200 rounded-lg p-4">
+
+### 🌐 `public`
+
+Expose les opérations accessibles.
+
+</div>
+
+<div class="border border-gray-200 rounded-lg p-4">
+
+### 📤 Accesseur
+
+Permet la consultation.
+
+</div>
+
+<div class="border border-gray-200 rounded-lg p-4">
+
+### 📥 Mutateur
+
+Permet une modification contrôlée.
+
+</div>
+
+</div>
+
+<div class="border-t border-gray-200 mt-6 pt-4 text-center font-medium">
+
+L'encapsulation permet à l'objet de contrôler l'accès et l'évolution de son état.
+
+</div>
+
+---
+layout: default
+---
+
+# Exercice : encapsuler `CompteBancaire`
+
+<div class="mt-3 text-lg">
+
+Nous souhaitons représenter un compte bancaire en respectant le principe d'encapsulation.
+
+</div>
+
+<div class="grid grid-cols-2 gap-8 mt-5">
+
+<div class="border border-gray-200 rounded-lg p-5">
+
+### Le compte possède
+
+- un <strong>titulaire</strong>
+- un <strong>solde</strong>
+
+<div class="mt-4 text-sm text-gray-500">
+
+Le solde initial est fourni lors de la création du compte.
+
+</div>
+
+</div>
+
+<div class="border border-gray-200 rounded-lg p-5">
+
+### Le compte permet
+
+- de consulter le solde
+- de déposer une somme
+- de retirer une somme
+
+<div class="mt-4 text-sm text-gray-500">
+
+Le solde ne doit pas pouvoir être fixé directement depuis l'extérieur.
+
+</div>
+
+</div>
+
+</div>
+
+<div class="mt-5 text-center font-medium">
+
+Proposez la classe <code>CompteBancaire</code> correspondante.
+
+</div>
+
+<div v-click class="border-t border-gray-200 mt-5 pt-4 text-center">
+
+Quels membres doivent être <code>private</code> ? Quels membres doivent être <code>public</code> ?
 
 <br>
 
-cela signifie que <strong>la classe contrôle la manière d'accéder à son état</strong>.
+<strong>Faut-il fournir un setter pour le solde ?</strong>
+
+</div>
+
+---
+layout: default
+---
+
+# Correction : `CompteBancaire`
+
+<div class="grid grid-cols-2 gap-8 mt-3">
+
+<div>
+
+```java
+public class CompteBancaire {
+
+    private String titulaire;
+    private double solde;
+
+    public CompteBancaire(String titulaire, double solde) {
+        this.titulaire = titulaire;
+        this.solde = solde;
+    }
+
+    public double getSolde() {
+        return solde;
+    }
+
+    public void deposer(double montant) {
+        solde += montant;
+    }
+
+    public void retirer(double montant) {
+        solde -= montant;
+    }
+}
+```
+
+</div>
+
+<div class="border-l border-gray-200 pl-8">
+
+### Choix d'encapsulation
+
+<div class="mt-5">
+
+**🔒 État interne**
+
+`titulaire` et `solde` sont `private`.
+
+</div>
+
+<div class="mt-5">
+
+**👁 Consultation**
+
+`getSolde()` permet de consulter le solde.
+
+</div>
+
+<div class="mt-5">
+
+**⚙️ Modification**
+
+Le solde évolue avec `deposer()` et `retirer()`.
+
+</div>
+
+<div class="mt-5">
+
+**🚫 Pas de `setSolde()`**
+
+Le solde ne peut pas être fixé arbitrairement.
+
+</div>
+
+</div>
 
 </div>

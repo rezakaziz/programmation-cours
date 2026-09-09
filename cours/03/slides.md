@@ -4,7 +4,7 @@ theme: default
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 # some information about your slides (markdown enabled)
-title: Classes et Objets
+title: Encapsulation et packages
 
 # apply UnoCSS classes to the current slide
 class: text-center
@@ -26,119 +26,164 @@ layout: default
 <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
 
 <div class="text-sm uppercase tracking-widest text-gray-400 mb-5">
-Chapitre 2
+
+Chapitre 3
+
 </div>
 
-# Classes et objets
+# Encapsulation et packages
 
 <div class="mt-4 text-xl text-gray-500">
-Passer du modèle à la création et à la manipulation d'objets
+
+Protéger les données et organiser les classes d'une application
+
 </div>
 
-<div class="mt-8 text-sm text-gray-500">
-Classes
-<span class="text-gray-300 mx-3">•</span>
-Objets
-<span class="text-gray-300 mx-3">•</span>
-Références
-<span class="text-gray-300 mx-3">•</span>
-Tableaux d'objets
+<div class="mt-8 flex flex-nowrap items-center justify-center text-sm text-gray-500 whitespace-nowrap">
+
+<span>Encapsulation</span>
+
+<span class="text-gray-300 mx-2">•</span>
+
+<span>Visibilité</span>
+
+<span class="text-gray-300 mx-2">•</span>
+
+<span>Accesseurs</span>
+
+<span class="text-gray-300 mx-2">•</span>
+
+<span>Mutateurs</span>
+
+<span class="text-gray-300 mx-2">•</span>
+
+<span>Packages</span>
+
 </div>
 
 </div>
 ---
-src: ./pages/class.md
+layout: default
+---
+
+# Plan du chapitre
+
+<div class="grid grid-cols-2 gap-4 mt-5">
+
+<div class="border border-gray-200 rounded-lg p-3">
+
+<div class="text-sm text-gray-400">
+01
+</div>
+
+<div class="font-medium text-lg mt-1">
+Encapsulation
+</div>
+
+<div class="text-sm text-gray-500 mt-1">
+Contrôler l'accès à l'état interne d'un objet.
+</div>
+
+</div>
+
+<div class="border border-gray-200 rounded-lg p-3">
+
+<div class="text-sm text-gray-400">
+02
+</div>
+
+<div class="font-medium text-lg mt-1">
+Interface et implémentation
+</div>
+
+<div class="text-sm text-gray-500 mt-1">
+Séparer ce qui est exposé de ce qui reste interne.
+</div>
+
+</div>
+
+<div class="border border-gray-200 rounded-lg p-3">
+
+<div class="text-sm text-gray-400">
+03
+</div>
+
+<div class="font-medium text-lg mt-1">
+Accesseurs et mutateurs
+</div>
+
+<div class="text-sm text-gray-500 mt-1">
+Lire et modifier les données de manière contrôlée.
+</div>
+
+</div>
+
+<div class="border border-gray-200 rounded-lg p-3">
+
+<div class="text-sm text-gray-400">
+04
+</div>
+
+<div class="font-medium text-lg mt-1">
+Packages
+</div>
+
+<div class="text-sm text-gray-500 mt-1">
+Organiser les classes selon leur rôle.
+</div>
+
+</div>
+
+<div class="border border-gray-200 rounded-lg p-3">
+
+<div class="text-sm text-gray-400">
+05
+</div>
+
+<div class="font-medium text-lg mt-1">
+Imports
+</div>
+
+<div class="text-sm text-gray-500 mt-1">
+Utiliser des classes appartenant à d'autres packages.
+</div>
+
+</div>
+
+<div class="border border-gray-200 rounded-lg p-3">
+
+<div class="text-sm text-gray-400">
+06
+</div>
+
+<div class="font-medium text-lg mt-1">
+Visibilité et packages
+</div>
+
+<div class="text-sm text-gray-500 mt-1">
+Comprendre les règles d'accès entre les classes.
+</div>
+
+</div>
+
+</div>
+
+---
+src: ./pages/encapsulation.md
 ---
 ---
 src: ./pages/getset.md
 ---
 ---
-layout: default
----
-
-# À retenir : les classes
-
-<div class="mt-4 text-lg text-center">
-
-Une <strong>classe</strong> permet de regrouper les données et les opérations qui concernent un même concept.
-
-</div>
-
-<div class="grid grid-cols-3 gap-6 mt-8">
-
-<div class="border border-gray-200 rounded-lg p-5 text-center">
-
-<div class="text-xl font-medium">
-📦 Attributs
-</div>
-
-<div class="mt-3 text-gray-600">
-
-Décrivent les <strong>données</strong> de la classe.
-
-</div>
-
-<div class="mt-3">
-<code>x</code> · <code>y</code>
-</div>
-
-</div>
-
-<div class="border border-gray-200 rounded-lg p-5 text-center">
-
-<div class="text-xl font-medium">
-⚙️ Méthodes
-</div>
-
-<div class="mt-3 text-gray-600">
-
-Décrivent les <strong>opérations</strong> disponibles.
-
-</div>
-
-<div class="mt-3">
-<code>deplacer()</code>
-</div>
-
-</div>
-
-<div class="border border-gray-200 rounded-lg p-5 text-center">
-
-<div class="text-xl font-medium">
-🔒 Encapsulation
-</div>
-
-<div class="mt-3 text-gray-600">
-
-Permet de <strong>protéger les données</strong> et de contrôler leur accès.
-
-</div>
-
-<div class="mt-3">
-<code>private</code> · <code>public</code>
-</div>
-
-</div>
-
-</div>
-
-<div class="border-t border-gray-200 mt-7 pt-5 text-center text-lg font-medium">
-
-Une classe définit une <strong>structure</strong> et des <strong>comportements</strong>.
-
-</div>
-
-<div class="mt-4 text-center text-gray-500">
-
-Mais comment utiliser concrètement cette classe dans un programme ? → <strong>Les objets</strong>
-
-</div>
----
-src: ./pages/objet.md
+src: ./pages/packages.md
 ---
 ---
-src: ./pages/reference.md
+src: ./pages/imports.md
 ---
 ---
-src: ./pages/constructeur.md
+src: ./pages/visibilite.md
 ---
+---
+src: ./pages/synthese.md
+---
+
