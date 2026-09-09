@@ -47,6 +47,102 @@ Tableaux d'objets
 
 </div>
 ---
+layout: default
+---
+
+# Plan du chapitre
+
+<div class="mt-3 text-lg">
+
+
+</div>
+
+<div class="grid grid-cols-2 gap-5 mt-6">
+
+<div class="border border-gray-200 rounded-lg p-4">
+
+<div class="text-sm text-gray-400">
+01
+</div>
+
+<div class="font-medium text-lg mt-2">
+Notion de classe
+</div>
+
+<div class="text-sm text-gray-500 mt-2">
+Définir la structure et le comportement d'un type d'objet.
+</div>
+
+</div>
+
+<div class="border border-gray-200 rounded-lg p-4">
+
+<div class="text-sm text-gray-400">
+02
+</div>
+
+<div class="font-medium text-lg mt-2">
+Notion d'objet
+</div>
+
+<div class="text-sm text-gray-500 mt-2">
+Créer des instances et manipuler leur état.
+</div>
+
+</div>
+
+<div class="border border-gray-200 rounded-lg p-4">
+
+<div class="text-sm text-gray-400">
+03
+</div>
+
+<div class="font-medium text-lg mt-2">
+Notion de référence
+</div>
+
+<div class="text-sm text-gray-500 mt-2">
+Comprendre comment une variable permet d'accéder à un objet.
+</div>
+
+</div>
+
+<div class="border border-gray-200 rounded-lg p-4">
+
+<div class="text-sm text-gray-400">
+04
+</div>
+
+<div class="font-medium text-lg mt-2">
+Notion de constructeur
+</div>
+
+<div class="text-sm text-gray-500 mt-2">
+Initialiser un objet au moment de sa création.
+</div>
+
+</div>
+
+</div>
+
+<div class="border border-gray-200 rounded-lg p-4 mt-5 text-center">
+
+<div class="text-sm text-gray-400">
+05
+</div>
+
+<div class="font-medium text-lg mt-2">
+Membres et méthodes <code>static</code>
+</div>
+
+<div class="text-sm text-gray-500 mt-2">
+Distinguer ce qui appartient à un objet de ce qui appartient à la classe.
+</div>
+
+</div>
+
+
+---
 src: ./pages/class.md
 ---
 ---
