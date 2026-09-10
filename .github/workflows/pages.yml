@@ -29,6 +29,7 @@ jobs:
         run: npm i -g @antfu/ni
 
       - name: Install dependencies
+        working-directory: ./slidev
         run: nci
 
       - name: Build
