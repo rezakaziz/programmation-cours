@@ -34,12 +34,18 @@ jobs:
     
       - name: Create site directory
         run: mkdir -p site/cours
-      - name: Build cours 01
+      - name: Build all courses
         working-directory: ./slidev
-        run: >
-          nr build cours/01/slides.md
-          --base /${{ github.event.repository.name }}/cours/01/
-          --out "${{ github.workspace }}/site/cours/01"
+        run: |
+            for slides in cours/*/slides.md; do
+            course=$(basename "$(dirname "$slides")")
+
+            echo "=== Building cours $course ==="
+
+            nr build "$slides" \
+                --base "/${{ github.event.repository.name }}/cours/$course/" \
+                --out "${{ github.workspace }}/site/cours/$course"
+            done
 
       - name: Setup Pages
         uses: actions/configure-pages@v6
@@ -49,10 +55,7 @@ jobs:
       - uses: actions/upload-pages-artifact@v5
         with:
           path: site
-      - name: Debug site structure
-        run: |
-            echo "=== SITE CONTENT ==="
-            find site -maxdepth 4 -type f | sort
+      
 
   deploy:
     environment:
