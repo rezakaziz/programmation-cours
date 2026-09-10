@@ -1,0 +1,116 @@
+name: Deploy MkDocs + Slidev to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      # ============================
+      # MkDocs
+      # ============================
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install MkDocs dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Build MkDocs
+        run: |
+          mkdocs build --site-dir dist
+
+      # ============================
+      # Slidev
+      # ============================
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "lts/*"
+          cache: npm
+          cache-dependency-path: slidev/package-lock.json
+
+      - name: Install Slidev dependencies
+        working-directory: slidev
+        run: npm ci
+
+      - name: Build all Slidev courses
+        working-directory: slidev
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          REPO_NAME="${{ github.event.repository.name }}"
+
+          for course_dir in cours/*; do
+            if [ ! -d "$course_dir" ]; then
+              continue
+            fi
+
+            course_name="$(basename "$course_dir")"
+            slides_file="$course_dir/slides.md"
+
+            if [ ! -f "$slides_file" ]; then
+              echo "No slides.md found in $course_dir - skipping"
+              continue
+            fi
+
+            echo "Building course $course_name"
+
+            npx slidev build "$slides_file" \
+              --base "/${REPO_NAME}/slides/${course_name}/" \
+              --out "${{ github.workspace }}/dist/slides/${course_name}"
+          done
+
+      # ============================
+      # GitHub Pages
+      # ============================
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
