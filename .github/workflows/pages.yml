@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
-
+# Node Slidev
       - uses: actions/setup-node@v6
         with:
           node-version: 'lts/*'
@@ -31,9 +31,19 @@ jobs:
       - name: Install dependencies
         working-directory: ./slidev
         run: nci
-    
-      - name: Create site directory
-        run: mkdir -p site/cours
+# Python mkdocs
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install MkDocs
+        run: |
+          pip install mkdocs
+          pip install mkdocs-material
+
+      - name: Build MkDocs
+        run: |
+          mkdocs build --site-dir "${{ github.workspace }}/site"
       - name: Build all courses
         working-directory: ./slidev
         run: |
