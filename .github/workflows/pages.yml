@@ -50,14 +50,18 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: "lts/*"
-          cache: npm
-          cache-dependency-path: slidev/package-lock.json
+            node-version: "24"
+            cache: npm
+            cache-dependency-path: slidev/package-lock.json
+
+      - name: Show Node/npm versions
+        run: |
+          node --version
+          npm --version
 
       - name: Install Slidev dependencies
         working-directory: slidev
         run: npm ci
-
       - name: Build all Slidev courses
         working-directory: slidev
         shell: bash
