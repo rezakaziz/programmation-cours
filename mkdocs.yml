@@ -1,1 +1,25 @@
-site_name: My Docs
+site_name: ECUE1 - Programmation
+theme:
+  name: material
+  palette:
+    primary: red
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Accueil: index.md
+  - Cours:
+      - Séance-01: cours/01/
+
+  - QCM:
+  - Travaux Pratiques:
