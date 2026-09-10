@@ -31,10 +31,15 @@ jobs:
       - name: Install dependencies
         working-directory: ./slidev
         run: nci
-
-      - name: Build
+    
+      - name: Create site directory
+        run: mkdir -p site/cours
+      - name: Build cours 01
         working-directory: ./slidev
-        run: nr build cours/01/slides.md --base /${{github.event.repository.name}}/slidev/cours/01/
+        run: >
+          nr build cours/01/slides.md
+          --base /${{ github.event.repository.name }}/cours/01/
+          --out ../site/cours/01
 
       - name: Setup Pages
         uses: actions/configure-pages@v6
