@@ -19,5 +19,5 @@ extra_javascript:
 nav:
   - Accueil: index.md
   - Cours:
-      - Séance-01: cours/01/
+      - Intro-POO: cours/01/
 
