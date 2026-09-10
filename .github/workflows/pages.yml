@@ -48,7 +48,7 @@ jobs:
 
       - uses: actions/upload-pages-artifact@v5
         with:
-          path: slidev/cours/01/dist
+          path: site
 
   deploy:
     environment:
