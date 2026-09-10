@@ -34,7 +34,7 @@ jobs:
 
       - name: Build
         working-directory: ./slidev
-        run: nr build --base /${{github.event.repository.name}}/slidev/cours/01/
+        run: nr build cours/01/slides.md --base /${{github.event.repository.name}}/slidev/cours/01/
 
       - name: Setup Pages
         uses: actions/configure-pages@v6
