@@ -39,7 +39,7 @@ jobs:
         run: >
           nr build cours/01/slides.md
           --base /${{ github.event.repository.name }}/cours/01/
-          --out ../site/cours/01
+          --out "${{ github.workspace }}/site/cours/01"
 
       - name: Setup Pages
         uses: actions/configure-pages@v6
