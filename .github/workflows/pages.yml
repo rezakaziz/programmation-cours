@@ -33,6 +33,7 @@ jobs:
         run: nci
 
       - name: Build
+        working-directory: ./slidev
         run: nr build --base /${{github.event.repository.name}}/slidev/
 
       - name: Setup Pages
